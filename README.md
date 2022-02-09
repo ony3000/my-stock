@@ -1,2 +1,2 @@
 # my-stock
-Clone coding: ministock
+Clone coding: [ministock](https://mini.koreainvestment.com/public/br/)
