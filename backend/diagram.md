@@ -4,6 +4,7 @@
 * Some of the defined object relationships may be missing.
 * The data types used in the definitions below may differ from the actual data types of the DBMS.
 
+### Key implementation goals
 ```mermaid
 classDiagram
   class BaseClass {
@@ -14,7 +15,6 @@ classDiagram
   class OtherClasses
   BaseClass <|-- OtherClasses : inheritance
 ```
-
 ```mermaid
 classDiagram
   class User
@@ -32,7 +32,6 @@ classDiagram
   %% It is not exposed in the UI, but is included in the search target.
   Stock : string english_name
   Stock : number annual_dividend_rate
-  Stock : boolean is_etf
   Stock : string 기업정보
   Stock : string 창업자
   Stock : string ceo
@@ -99,5 +98,13 @@ classDiagram
     date 공지일
     string title
     string content
+  }
+```
+
+### Extra implementation goals
+```mermaid
+classDiagram
+  class Stock {
+    boolean is_etf
   }
 ```
