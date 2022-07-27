@@ -82,6 +82,7 @@ classDiagram
     number 달러화_주가
     integer 원화_주가
   }
+  Stock "1" <-- "N" 주가
 
   class FaqCategory {
     string name
@@ -99,6 +100,32 @@ classDiagram
     string title
     string content
   }
+
+  class 계좌 {
+    User user
+  }
+  User "1" <-- "1" 계좌
+
+  class 보유주식 {
+    User user
+    Stock stock
+  }
+  User "1" <-- "N" 보유주식
+  Stock "1" <-- "N" 보유주식
+
+  class 관심주식 {
+    User user
+    Stock stock
+  }
+  User "1" <-- "N" 관심주식
+  Stock "1" <-- "N" 관심주식
+
+  class 쇼핑백 {
+    User user
+    Stock stock
+  }
+  User "1" <-- "N" 쇼핑백
+  Stock "1" <-- "N" 쇼핑백
 ```
 
 ### Extra implementation goals
@@ -107,4 +134,20 @@ classDiagram
   class Stock {
     boolean is_etf
   }
+
+  class News {
+    date 날짜
+    string 출처
+    string title
+    string content
+  }
+  Stock "1" <-- "N" News
+
+  class Research {
+    date 날짜
+    string 출처
+    string title
+    string content
+  }
+  Stock "1" <-- "N" Research
 ```
