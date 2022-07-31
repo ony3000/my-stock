@@ -45,21 +45,16 @@ classDiagram
   }
 
   class 조회_내역 {
-    User user
-    Stock stock
   }
   User "1" <-- "N" 조회_내역
   Stock "1" <-- "N" 조회_내역
 
   class 검색_내역 {
-    User user
-    Stock stock
   }
   User "1" <-- "N" 검색_내역
   Stock "1" <-- "N" 검색_내역
 
   class 배당_내역 {
-    Stock stock
     date ex_date
     date 지급예정일
     number dividends_per_share
@@ -71,14 +66,11 @@ classDiagram
   }
 
   class unnamed_2 {
-    Stock stock
-    Theme theme
   }
   Stock "1" <-- "N" unnamed_2
   Theme "1" <-- "N" unnamed_2
 
   class 주가 {
-    Stock stock
     date 기준일
     number 달러화_주가
     integer 원화_주가
@@ -90,7 +82,6 @@ classDiagram
   }
 
   class Faq {
-    FaqCategory category
     string question
     string answer
   }
@@ -103,16 +94,13 @@ classDiagram
   }
 
   class 계좌 {
-    User user
   }
   User "1" <-- "1" 계좌
 
   class 주문_내역 {
-    User user
     string 주문_유형
     string 주문_상태
     timestamp 주문_시점
-    Stock stock
     integer 원화_주문금액
     number 주식_수
     number 달러화_주가
@@ -125,10 +113,8 @@ classDiagram
   Stock "1" <-- "N" 주문_내역
 
   class 거래_내역 {
-    User user
     string 거래_유형
     timestamp 거래_시점
-    Stock stock
     number 주식_수
     number 달러화_주가
     integer 원화_주가
@@ -141,22 +127,16 @@ classDiagram
   Stock "1" <-- "N" 거래_내역
 
   class 보유주식 {
-    User user
-    Stock stock
   }
   User "1" <-- "N" 보유주식
   Stock "1" <-- "N" 보유주식
 
   class 관심주식 {
-    User user
-    Stock stock
   }
   User "1" <-- "N" 관심주식
   Stock "1" <-- "N" 관심주식
 
   class 쇼핑백 {
-    User user
-    Stock stock
   }
   User "1" <-- "N" 쇼핑백
   Stock "1" <-- "N" 쇼핑백
@@ -186,8 +166,6 @@ classDiagram
   Stock "1" <-- "N" Research
 
   class 미니톡 {
-    User user
-    Stock stock
   }
   User "1" <-- "N" 미니톡
   Stock "1" <-- "N" 미니톡
