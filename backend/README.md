@@ -14,6 +14,11 @@ After virtualenv is activated:
 (.venv) $ black .
 ```
 
+### How to export the lock file
+```shell
+$ poetry export -f requirements.txt --output requirements.txt
+```
+
 ### How to create and start containers
 ```shell
 $ docker-compose up [--build] -d
