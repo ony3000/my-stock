@@ -107,6 +107,39 @@ classDiagram
   }
   User "1" <-- "1" 계좌
 
+  class 주문_내역 {
+    User user
+    string 주문_유형
+    string 주문_상태
+    timestamp 주문_시점
+    Stock stock
+    integer 원화_주문금액
+    number 주식_수
+    number 달러화_주가
+    number 적용_환율
+    integer 원화_주가
+    integer 원화_체결금액
+    integer 원화_수수료
+  }
+  User "1" <-- "N" 주문_내역
+  Stock "1" <-- "N" 주문_내역
+
+  class 거래_내역 {
+    User user
+    string 거래_유형
+    timestamp 거래_시점
+    Stock stock
+    number 주식_수
+    number 달러화_주가
+    integer 원화_주가
+    integer 원화_거래금액
+    integer 원화_수수료
+    integer 원화_잔액_변화
+    number 달러화_잔액_변화
+  }
+  User "1" <-- "N" 거래_내역
+  Stock "1" <-- "N" 거래_내역
+
   class 보유주식 {
     User user
     Stock stock
@@ -151,4 +184,11 @@ classDiagram
     string content
   }
   Stock "1" <-- "N" Research
+
+  class 미니톡 {
+    User user
+    Stock stock
+  }
+  User "1" <-- "N" 미니톡
+  Stock "1" <-- "N" 미니톡
 ```
