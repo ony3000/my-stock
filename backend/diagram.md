@@ -17,26 +17,27 @@ classDiagram
 ```
 ```mermaid
 classDiagram
-  class User
-  %% A unique value with a one-to-one correspondence with the class, independent of the primary key.
-  User : string email_address
-  User : string nickname
+  %% `email_address` is a unique value with a one-to-one correspondence with the class, independent of the primary key.
+  class User {
+    string email_address
+    string nickname
+  }
 
-  class Stock
-  %% A unique value with a one-to-one correspondence with the class, independent of the primary key.
-  Stock : string code
-  Stock : string logo_image_url
-  Stock : string korean_name
-  %% It is not exposed in the UI, but is included in the search target.
-  Stock : string korean_name_beginning_consonant
-  %% It is not exposed in the UI, but is included in the search target.
-  Stock : string english_name
-  Stock : number annual_dividend_rate
-  Stock : string 기업정보
-  Stock : string 창업자
-  Stock : string ceo
-  Stock : string 본사
-  Stock : string 설립연도
+  %% `code` is a unique value with a one-to-one correspondence with the class, independent of the primary key.
+  %% `korean_name_beginning_consonant` and `english_name` are not exposed in the UI, but are included in the search target.
+  class Stock {
+    string code
+    string logo_image_url
+    string korean_name
+    string korean_name_beginning_consonant
+    string english_name
+    number annual_dividend_rate
+    string 기업정보
+    string 창업자
+    string ceo
+    string 본사
+    string 설립연도
+  }
 
   class unnamed_1 {
     date notification_date
