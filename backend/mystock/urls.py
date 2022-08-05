@@ -22,6 +22,6 @@ router = routers.DefaultRouter()
 router.register(r"stocks", views.StockViewSet)
 
 urlpatterns = [
-    path("", include(router.urls)),
+    path("api/v1/", include(router.urls)),
     path("admin/", admin.site.urls),
 ]
