@@ -31,7 +31,7 @@ function App() {
         <ul>
           {stocks.map((stock) => (
             <li key={stock.code}>
-              {stock.kr_name}
+              {stock.krName}
               {' '}
               (
               {stock.code}
