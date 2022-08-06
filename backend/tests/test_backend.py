@@ -1,4 +1,4 @@
-from backend import __version__
+from mystock import __version__
 
 
 def test_version():
