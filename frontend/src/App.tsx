@@ -1,9 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { ListApiResponse } from './types/apis';
+import { Stock } from './types/models';
+import axios from './plugins/axios';
 import reactLogo from './assets/react.svg';
 import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [stocks, setStocks] = useState<Stock[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const { data } = await axios.get<ListApiResponse<Stock>>('stocks/');
+
+      setStocks(data.results);
+    })();
+  }, []);
 
   return (
     <div className="App">
@@ -17,22 +28,18 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button type="button" onClick={() => setCount((prevCount) => prevCount + 1)}>
-          count is
-          {' '}
-          {count}
-        </button>
-        <p>
-          Edit
-          {' '}
-          <code>src/App.tsx</code>
-          {' '}
-          and save to test HMR
-        </p>
+        <ul>
+          {stocks.map((stock) => (
+            <li key={stock.code}>
+              {stock.krName}
+              {' '}
+              (
+              {stock.code}
+              )
+            </li>
+          ))}
+        </ul>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   );
 }
