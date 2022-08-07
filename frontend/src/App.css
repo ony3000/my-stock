@@ -34,5 +34,8 @@
 
 .card {
   padding: 2em;
+}
+
+.stock-list {
   text-align: left;
 }
