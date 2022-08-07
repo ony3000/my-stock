@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ListApiResponse } from './types/apis';
 import { Stock } from './types/models';
-import axios from './plugins/axios';
+import { typedGet, typedPost } from './plugins/axios';
 import reactLogo from './assets/react.svg';
 import './App.css';
 
@@ -10,11 +10,29 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get<ListApiResponse<Stock>>('stocks/');
+      const { data, message } = await typedGet<ListApiResponse<Stock>>('stocks/');
 
-      setStocks(data.results);
+      if (message) {
+        // error handling
+      }
+
+      if (data) {
+        setStocks(data.results);
+      }
     })();
   }, []);
+
+  const getApi = async () => {
+    const response = await typedGet('random-400/');
+
+    console.log(response);
+  };
+
+  const postApi = async () => {
+    const response = await typedPost('random-500/');
+
+    console.log(response);
+  };
 
   return (
     <div className="App">
@@ -28,7 +46,9 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <ul>
+        <button type="button" onClick={getApi}>Randomly returns 200 or 4xx</button>
+        <button type="button" onClick={postApi}>Randomly returns 204 or 5xx</button>
+        <ul className="stock-list">
           {stocks.map((stock) => (
             <li key={stock.code}>
               {stock.krName}
