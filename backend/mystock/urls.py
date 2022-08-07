@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from mystock.core.views import random_400
+from mystock.core.views import random_400, random_500
 from mystock.market.views import StockViewSet
 from rest_framework import routers
 
@@ -24,6 +24,7 @@ router.register(r"stocks", StockViewSet)
 
 urlpatterns = [
     path("api/v1/random-400/", random_400, name="Randomly raises 4xx errors"),
+    path("api/v1/random-500/", random_500, name="Randomly raises 5xx errors"),
     path("api/v1/", include(router.urls)),
     path("admin/", admin.site.urls),
 ]

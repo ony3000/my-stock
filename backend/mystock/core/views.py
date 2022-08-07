@@ -1,7 +1,14 @@
 from random import randrange
 
+from mystock.core.exceptions import (
+    BadGateway,
+    GatewayTimeout,
+    InternalServerError,
+    ServiceUnavailable,
+)
 from mystock.market.models import Stock
 from mystock.market.serializers import StockSerializer
+from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.exceptions import (
     NotAcceptable,
@@ -41,3 +48,31 @@ def random_400(request):
     serializer = StockSerializer(stocks, many=True)
 
     return Response(serializer.data)
+
+
+@api_view(["POST"])
+def random_500(request):
+    roulette = randrange(0, 100)
+
+    if roulette < 10:
+        # 500 Internal Server Error
+        raise InternalServerError()
+
+    elif roulette < 20:
+        # 502 Bad Gateway
+        raise BadGateway()
+
+    elif roulette < 30:
+        # 503 Service Unavailable
+        raise ServiceUnavailable()
+
+    elif roulette < 40:
+        # 504 Gateway Timeout
+        raise GatewayTimeout()
+
+    elif roulette < 50:
+        # common error
+        non_existence = Stock.objects.filter(id__lt=1).first()
+        kr_name = non_existence.kr_name
+
+    return Response(None, status=status.HTTP_204_NO_CONTENT)
