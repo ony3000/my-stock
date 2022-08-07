@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ListApiResponse } from './types/apis';
 import { Stock } from './types/models';
-import axios from './plugins/axios';
+import { typedGet, typedPost } from './plugins/axios';
 import reactLogo from './assets/react.svg';
 import './App.css';
 
@@ -10,20 +10,26 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get<ListApiResponse<Stock>>('stocks/');
+      const { data, message } = await typedGet<ListApiResponse<Stock>>('stocks/');
 
-      setStocks(data.results);
+      if (message) {
+        // error handling
+      }
+
+      if (data) {
+        setStocks(data.results);
+      }
     })();
   }, []);
 
   const getApi = async () => {
-    const response = await axios.get('random-400/');
+    const response = await typedGet('random-400/');
 
     console.log(response);
   };
 
   const postApi = async () => {
-    const response = await axios.post('random-500/');
+    const response = await typedPost('random-500/');
 
     console.log(response);
   };

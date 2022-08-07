@@ -56,5 +56,3 @@ export const typedDelete = async <T = unknown>(...params: Parameters<typeof axio
 
   return Promise.resolve(typedResult);
 };
-
-export default instance;
