@@ -18,3 +18,15 @@ export type ErrorInformation = {
   name: string;
   status: number;
 };
+
+export type RefinedResponse<T = unknown> = {
+  status: number;
+  data: T;
+  message?: undefined;
+};
+
+export type RefinedError = {
+  status: number;
+  data?: undefined;
+  message: string;
+};

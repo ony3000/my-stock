@@ -1,5 +1,7 @@
 import axios, { AxiosResponse, AxiosError } from 'axios';
-import { ErrorResponseData, ErrorInformation } from '../types/apis';
+import {
+  ErrorResponseData, ErrorInformation, RefinedResponse, RefinedError,
+} from '../types/apis';
 
 const instance = axios.create({
   baseURL: 'http://localhost:8000/api/v1/',
@@ -15,7 +17,7 @@ instance.interceptors.response.use(
     console.error(error);
 
     const errorInfo = error.toJSON() as ErrorInformation;
-    const refinedError = error.response ? {
+    const refinedError: RefinedError = error.response ? {
       status: error.response.status,
       message: (
         typeof error.response.data !== 'string'
@@ -30,5 +32,29 @@ instance.interceptors.response.use(
     return refinedError;
   },
 );
+
+export const typedGet = async <T = unknown>(...params: Parameters<typeof axios.get>) => {
+  const typedResult = await instance.get<T>(...params) as RefinedResponse<T> | RefinedError;
+
+  return Promise.resolve(typedResult);
+};
+
+export const typedPost = async <T = unknown>(...params: Parameters<typeof axios.post>) => {
+  const typedResult = await instance.post<T>(...params) as RefinedResponse<T> | RefinedError;
+
+  return Promise.resolve(typedResult);
+};
+
+export const typedPatch = async <T = unknown>(...params: Parameters<typeof axios.patch>) => {
+  const typedResult = await instance.patch<T>(...params) as RefinedResponse<T> | RefinedError;
+
+  return Promise.resolve(typedResult);
+};
+
+export const typedDelete = async <T = unknown>(...params: Parameters<typeof axios.delete>) => {
+  const typedResult = await instance.delete<T>(...params) as RefinedResponse<T> | RefinedError;
+
+  return Promise.resolve(typedResult);
+};
 
 export default instance;
