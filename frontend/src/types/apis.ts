@@ -9,14 +9,14 @@ export type ManuallyRaisedExceptionData = {
   detail: string;
 };
 
-export type ErrorResponseData = string | ManuallyRaisedExceptionData;
+export type ErrorResponseData = string | ManuallyRaisedExceptionData | undefined;
 
 export type ErrorInformation = {
   code: string;
   config: object;
   message: string;
   name: string;
-  status: number;
+  status: number | null;
 };
 
 export type RefinedResponse<T = unknown> = {

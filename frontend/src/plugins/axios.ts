@@ -23,12 +23,12 @@ instance.interceptors.response.use(
     const refinedError: RefinedError = error.response ? {
       status: error.response.status,
       message: (
-        typeof error.response.data !== 'string'
+        typeof error.response.data === 'object'
           ? error.response.data.detail
-          : error.response.statusText
+          : (error.response.statusText || error.message)
       ),
     } : {
-      status: errorInfo.status,
+      status: Number(errorInfo.status),
       message: errorInfo.message,
     };
 
