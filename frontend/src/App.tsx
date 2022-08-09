@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ListApiResponse } from './types/apis';
-import { Stock } from './types/models';
-import { typedGet, typedPost } from './plugins/axios';
+import { ListApiResponse } from '@/types/apis';
+import { Stock } from '@/types/models';
+import { typedGet, typedPost } from '@/plugins/axios';
 import reactLogo from './assets/react.svg';
 import './App.css';
 
