@@ -21,8 +21,20 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'import',
   ],
   rules: {
     '@typescript-eslint/brace-style': [2, 'stroustrup'],
+    'import/no-unresolved': 2,
+  },
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
   },
 };
