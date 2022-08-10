@@ -1,0 +1,75 @@
+- model: market.stock
+  pk: 1
+  fields:
+    code: AAPL
+    kr_name: 애플
+- model: market.stock
+  pk: 2
+  fields:
+    code: MSFT
+    kr_name: 마이크로소프트
+- model: market.stock
+  pk: 3
+  fields:
+    code: AMZN
+    kr_name: 아마존닷컴
+- model: market.stock
+  pk: 4
+  fields:
+    code: TSLA
+    kr_name: 테슬라
+- model: market.stock
+  pk: 5
+  fields:
+    code: GOOG
+    kr_name: 알파벳 C주
+- model: market.stock
+  pk: 6
+  fields:
+    code: GOOGL
+    kr_name: 알파벳 A주
+- model: market.stock
+  pk: 7
+  fields:
+    code: UNH
+    kr_name: 유나이티드헬스 그룹
+- model: market.stock
+  pk: 8
+  fields:
+    code: NVDA
+    kr_name: 엔비디아
+- model: market.stock
+  pk: 9
+  fields:
+    code: TSM
+    kr_name: TSMC ADR
+- model: market.stock
+  pk: 10
+  fields:
+    code: JNJ
+    kr_name: 존슨앤드존슨
+- model: market.stock
+  pk: 11
+  fields:
+    code: META
+    kr_name: 메타 플랫폼스(페이스북)
+- model: market.stock
+  pk: 12
+  fields:
+    code: BRK/B
+    kr_name: 버크셔 해서웨이 B주
+- model: market.stock
+  pk: 13
+  fields:
+    code: XOM
+    kr_name: 엑슨 모빌
+- model: market.stock
+  pk: 14
+  fields:
+    code: V
+    kr_name: 비자
+- model: market.stock
+  pk: 15
+  fields:
+    code: PG
+    kr_name: 프록터 앤드 갬블
