@@ -43,6 +43,10 @@ $ docker-compose up [--build] -d
 ```shell
 $ docker-compose run [--rm] SERVICE_NAME COMMAND
 ```
+- Creating a fixture:<br>
+`docker-compose run --rm SERVICE_NAME python manage.py dumpdata --format=yaml --exclude=admin --exclude=auth --exclude=contenttypes --exclude=sessions --output=db.yaml`
+- Read from the fixture and re-loaded into the database:<br>
+`docker-compose run --rm SERVICE_NAME python manage.py loaddata FIXTURE_NAME`
 
 ### PostgreSQL notes
 * [Optimizing PostgreSQL's configuration](https://docs.djangoproject.com/en/3.2/ref/databases/#optimizing-postgresql-s-configuration): Edit `postgresql.conf` in docker volume.
