@@ -169,4 +169,9 @@ classDiagram
   }
   사용자 "1" <-- "N" 미니톡
   주식 "1" <-- "N" 미니톡
+
+  class unnamed_3 {
+    date 미국_휴장일
+    date 국내_휴일
+  }
 ```
