@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ListApiResponse } from '~/types/apis';
-import { Stock } from '~/types/models';
+import type { ListApiResponse } from '~/types/apis';
+import type { Stock } from '~/types/models';
 import { typedGet, typedPost } from '~/plugins/axios';
 
 export default function Index() {
@@ -33,7 +33,7 @@ export default function Index() {
   };
 
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
       <h1>Welcome to Remix</h1>
       <div>
         <button type="button" onClick={getApi}>Randomly returns 200 or 4xx</button>
