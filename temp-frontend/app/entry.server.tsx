@@ -38,6 +38,7 @@ export default function handleRequest(
         onError: (error) => {
           didError = true;
 
+          // eslint-disable-next-line no-console
           console.error(error);
         },
       },
