@@ -1,7 +1,8 @@
-import axios, { AxiosResponse, AxiosError } from 'axios';
-import {
+import type { AxiosResponse, AxiosError } from 'axios';
+import axios from 'axios';
+import type {
   ErrorResponseData, ErrorInformation, RefinedResponse, RefinedError,
-} from '@/types/apis';
+} from '~/types/apis';
 
 const instance = axios.create({
   baseURL: 'http://localhost:8000/api/v1/',

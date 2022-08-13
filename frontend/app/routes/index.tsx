@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
-import { ListApiResponse } from '@/types/apis';
-import { Stock } from '@/types/models';
-import { typedGet, typedPost } from '@/plugins/axios';
-import reactLogo from './assets/react.svg';
-import './App.css';
+import type { ListApiResponse } from '~/types/apis';
+import type { Stock } from '~/types/models';
+import { typedGet, typedPost } from '~/plugins/axios';
 
-function App() {
+export default function Index() {
   const [stocks, setStocks] = useState<Stock[]>([]);
 
   useEffect(() => {
@@ -35,20 +33,12 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
+      <h1>Welcome to Remix</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
         <button type="button" onClick={getApi}>Randomly returns 200 or 4xx</button>
         <button type="button" onClick={postApi}>Randomly returns 204 or 5xx</button>
-        <ul className="stock-list">
+        <ul>
           {stocks.map((stock) => (
             <li key={stock.code}>
               {stock.krName}
@@ -63,5 +53,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
