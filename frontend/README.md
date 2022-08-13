@@ -5,7 +5,7 @@
 * [Yarn](https://classic.yarnpkg.com/en/)
 * [TypeScript](https://www.typescriptlang.org/)
 * [React](https://reactjs.org/)
-* [Vite](https://vitejs.dev/)
+* [Remix](https://remix.run/)
 * [ESLint](https://eslint.org/)
 
 ### How to find and fix problems in code
