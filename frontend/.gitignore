@@ -163,3 +163,6 @@ node_modules
 /build
 /public/build
 .env
+
+### Tailwind CSS with Remix ###
+app/styles/app.css
