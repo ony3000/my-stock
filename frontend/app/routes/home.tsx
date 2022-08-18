@@ -1,20 +1,10 @@
-import { Link } from '@remix-run/react';
+import { GlobalNavigation } from '~/components';
 
 export default function Home() {
   return (
     <div className="container max-w-screen-sm">
       <h1 className="sr-only">홈</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/home">홈</Link>
-          </li>
-          <li>검색</li>
-          <li>테마</li>
-          <li>자산</li>
-          <li>더보기</li>
-        </ul>
-      </nav>
+      <GlobalNavigation />
       <main>
         <section>
           <h2 className="sr-only">배너</h2>
