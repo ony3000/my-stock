@@ -1,14 +1,12 @@
-import { GlobalNavigation } from '~/components';
+import { GlobalNavigation, BannerSection } from '~/components';
 
 export default function Home() {
   return (
-    <div className="container max-w-screen-sm">
+    <div className="relative container max-w-screen-sm h-screen pb-[3.75rem]">
       <h1 className="sr-only">홈</h1>
       <GlobalNavigation />
       <main>
-        <section>
-          <h2 className="sr-only">배너</h2>
-        </section>
+        <BannerSection />
         <section>
           <h2 className="sr-only">유형별 주식 Top 10</h2>
         </section>
