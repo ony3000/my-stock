@@ -6,6 +6,7 @@ import {
   CurrencyDollarIcon,
   DotsHorizontalIcon,
 } from '@heroicons/react/outline';
+import classNames from 'classnames';
 import type { NavigationItem } from '~/types/layouts';
 
 export default function GlobalNavigation() {
@@ -47,7 +48,11 @@ export default function GlobalNavigation() {
           <li key={title} className="flex-1">
             <Link to={href} className="inline-flex justify-center items-center w-full h-full">
               <span className="sr-only">{title}</span>
-              <IconComponent className={`w-6 h-6 ${matchedPathnames.includes(href) ? 'text-blue-500' : ''}`} />
+              <IconComponent
+                className={classNames('w-6', 'h-6', {
+                  'text-blue-500': matchedPathnames.includes(href),
+                })}
+              />
             </Link>
           </li>
         ))}
