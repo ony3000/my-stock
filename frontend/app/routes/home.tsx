@@ -1,15 +1,16 @@
-import { GlobalNavigation, BannerSection } from '~/components';
+import {
+  BannerSection, GlobalNavigation, RankingSection, SectionDivider,
+} from '~/components';
 
 export default function Home() {
   return (
-    <div className="relative container max-w-screen-sm h-screen pb-[3.75rem]">
+    <div className="relative container overflow-y-auto max-w-screen-sm h-screen pb-[3.75rem] bg-gray-100">
       <h1 className="sr-only">홈</h1>
       <GlobalNavigation />
       <main>
         <BannerSection />
-        <section>
-          <h2 className="sr-only">유형별 주식 Top 10</h2>
-        </section>
+        <SectionDivider />
+        <RankingSection />
         <section>
           <h2 className="sr-only">지금 사면 배당받는 주식</h2>
         </section>
