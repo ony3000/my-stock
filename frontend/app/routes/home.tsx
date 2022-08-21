@@ -4,7 +4,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="relative container overflow-y-auto max-w-screen-sm h-screen pb-[3.75rem] bg-gray-100">
+    <div className="relative container overflow-y-auto max-w-screen-sm h-screen pb-15 bg-gray-100">
       <h1 className="sr-only">홈</h1>
       <GlobalNavigation />
       <main>

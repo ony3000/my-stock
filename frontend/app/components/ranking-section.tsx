@@ -31,12 +31,12 @@ export default function RankingSection() {
   return (
     <section className="bg-white">
       <h2 className="sr-only">유형별 주식 Top 10</h2>
-      <div className="h-[3.4375rem] border-b border-solid border-gray-300 px-[1.5625rem]">
+      <div className="h-13.75 border-b border-solid border-gray-300 px-6.25">
         <ul className="flex items-end h-full text-sm font-bold">
           {mockCategories.map(({ title, isActive }) => (
             <li
               key={title}
-              className={classNames('ml-[1.875rem]', 'first:ml-0', 'border-b-[3px]', 'border-solid', {
+              className={classNames('ml-7.5', 'first:ml-0', 'border-b-[3px]', 'border-solid', {
                 'border-blue-400': isActive,
                 'text-blue-400': isActive,
                 'border-transparent': !isActive,
@@ -49,7 +49,7 @@ export default function RankingSection() {
           ))}
         </ul>
       </div>
-      <div className="pt-[2.1875rem] px-[1.5625rem] pb-5">
+      <div className="pt-8.75 px-6.25 pb-5">
         <ul>
           {stocks.map(({ code, krName }) => {
             const mockPrice = Math.floor(Math.random() * 901234 + 5678);
@@ -96,7 +96,7 @@ export default function RankingSection() {
         </ul>
         <button
           type="button"
-          className="flex justify-center items-center w-full h-[3.4375rem] my-2.5 border border-solid border-gray-200 rounded-[3px]"
+          className="flex justify-center items-center w-full h-13.75 my-2.5 border border-solid border-gray-200 rounded-[3px]"
         >
           <span className="text-gray-700 text-[13px] leading-[1.125rem]">더보기</span>
         </button>
