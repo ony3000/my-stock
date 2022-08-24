@@ -50,7 +50,7 @@ export default function RankingSection() {
         </ul>
       </div>
       <div className="pt-8.75 px-6.25 pb-5">
-        <ul>
+        <ul className="h-[50rem]">
           {stocks.map(({ code, krName }) => {
             const mockPrice = Math.floor(Math.random() * 901234 + 5678);
             const mockPercentage = Math.random() * 20 - 10;

@@ -1,5 +1,5 @@
 import {
-  BannerSection, GlobalNavigation, RankingSection, SectionDivider,
+  BannerSection, DividendSection, GlobalNavigation, RankingSection, SectionDivider,
 } from '~/components';
 
 export default function Home() {
@@ -11,9 +11,7 @@ export default function Home() {
         <BannerSection />
         <SectionDivider />
         <RankingSection />
-        <section>
-          <h2 className="sr-only">지금 사면 배당받는 주식</h2>
-        </section>
+        <DividendSection />
         <section>
           <h2 className="sr-only">원달러 환율</h2>
         </section>

@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        iphone: '375px', // iPhone 6(s), 7, 8, SE2
+      },
       spacing: {
         1.25: '0.3125rem',
         3.75: '0.9375rem',
