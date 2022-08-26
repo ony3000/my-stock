@@ -1,5 +1,6 @@
 import {
   BannerSection,
+  DisclaimerSection,
   DividendSection,
   ExchangeRateSection,
   GlobalNavigation,
@@ -19,9 +20,7 @@ export default function Home() {
         <DividendSection />
         <SectionDivider />
         <ExchangeRateSection />
-        <section>
-          <h2 className="sr-only">책임의 한계와 법적 고지</h2>
-        </section>
+        <DisclaimerSection />
       </main>
     </div>
   );
