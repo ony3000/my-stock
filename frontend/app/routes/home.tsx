@@ -1,5 +1,10 @@
 import {
-  BannerSection, DividendSection, GlobalNavigation, RankingSection, SectionDivider,
+  BannerSection,
+  DividendSection,
+  ExchangeRateSection,
+  GlobalNavigation,
+  RankingSection,
+  SectionDivider,
 } from '~/components';
 
 export default function Home() {
@@ -12,9 +17,8 @@ export default function Home() {
         <SectionDivider />
         <RankingSection />
         <DividendSection />
-        <section>
-          <h2 className="sr-only">원달러 환율</h2>
-        </section>
+        <SectionDivider />
+        <ExchangeRateSection />
         <section>
           <h2 className="sr-only">책임의 한계와 법적 고지</h2>
         </section>
