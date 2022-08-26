@@ -66,7 +66,7 @@ export default function RankingSection() {
                 <div>
                   <img
                     className="w-10 h-10 object-contain rounded-full"
-                    src="https://picsum.photos/80"
+                    src="https://via.placeholder.com/80"
                     alt={`임시 ${krName} 아이콘`}
                   />
                 </div>

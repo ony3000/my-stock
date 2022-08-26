@@ -7,7 +7,7 @@ export default function BannerSection() {
       <Link to="#" className="inline-flex justify-center items-center w-full h-full p-6.25">
         <img
           className="w-full h-full object-contain"
-          src="https://picsum.photos/650/300"
+          src="https://via.placeholder.com/650x300"
           alt="임시 배너 이미지"
         />
       </Link>

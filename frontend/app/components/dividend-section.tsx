@@ -53,7 +53,7 @@ export default function DividendSection() {
               <div>
                 <img
                   className="w-6.25 h-6.25 object-contain rounded-full"
-                  src="https://picsum.photos/80"
+                  src="https://via.placeholder.com/80"
                   alt={`임시 ${krName} 아이콘`}
                 />
               </div>
