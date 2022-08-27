@@ -1,28 +1,13 @@
-import {
-  QuestionMarkCircleIcon,
-} from '@heroicons/react/outline';
-import { useState, useEffect } from 'react';
+import { QuestionMarkCircleIcon } from '@heroicons/react/outline';
 import invariant from 'tiny-invariant';
-import type { ListApiResponse } from '~/types/apis';
-import type { Stock } from '~/types/models';
-import { typedGet } from '~/plugins/axios';
+import type { MockStock } from '~/types/mocks';
 import { ContentWrapper } from '~/layouts';
 
-export default function DividendSection() {
-  const [stocks, setStocks] = useState<Stock[]>([]);
+interface DividendSectionProps {
+  stocks: MockStock[];
+}
 
-  const now = new Date();
-  const oneDayInMilliseconds = 1000 * 60 * 60 * 24;
-
-  useEffect(() => {
-    (async () => {
-      const { status, data, message } = await typedGet<ListApiResponse<Stock>>('stocks/');
-
-      invariant(status === 200 && data, message);
-      setStocks(data.results);
-    })();
-  }, []);
-
+export default function DividendSection({ stocks }: DividendSectionProps) {
   return (
     <section className="bg-blue-400 text-white">
       <ContentWrapper className="flex flex-col py-7.5" style={{ overflow: 'hidden' }}>
@@ -37,17 +22,14 @@ export default function DividendSection() {
           </div>
         </div>
         <ul className="flex h-[10.125rem]">
-          {stocks.map(({ code, krName }) => {
-            const mockPrice = Math.floor(Math.random() * 901234 + 5678);
-            const mockPercentage = (Math.random() + 0.001) * 10;
-            const mockDate = new Date(
-              now.getTime() + oneDayInMilliseconds * Math.floor(Math.random() * 5 + 2),
-            );
-            const dateMatchResult = mockDate.toLocaleDateString().match(/\. (\d+)\. (\d+)\./);
+          {stocks.map(({
+            code, krName, price, dividendRate, exDividendDate,
+          }) => {
+            const dateMatchResult = exDividendDate.match(/^\d+-(\d+)-(\d+)/);
 
             invariant(dateMatchResult);
 
-            const displayPercentage = mockPercentage.toFixed(2);
+            const displayPercentage = (dividendRate * 100).toFixed(2);
             const [, month, dayOfMonth] = dateMatchResult;
 
             return (
@@ -67,14 +49,14 @@ export default function DividendSection() {
                   %
                 </div>
                 <div className="mt-[0.1875rem] text-gray-400 text-xs">
-                  {mockPrice.toLocaleString('ko-KR')}
+                  {price.toLocaleString('ko-KR')}
                   원
                 </div>
                 <div className="mt-[0.8125rem] text-red-500 text-xs">
-                  {month}
+                  {Number(month)}
                   월
                   {' '}
-                  {dayOfMonth}
+                  {Number(dayOfMonth)}
                   일 배당락
                 </div>
               </li>

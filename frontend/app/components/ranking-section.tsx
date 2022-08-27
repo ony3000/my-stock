@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
 import classNames from 'classnames';
-import invariant from 'tiny-invariant';
-import type { ListApiResponse } from '~/types/apis';
-import type { Stock } from '~/types/models';
-import { typedGet } from '~/plugins/axios';
+import type { MockStock } from '~/types/mocks';
 import { ContentWrapper } from '~/layouts';
 
-export default function RankingSection() {
-  const [stocks, setStocks] = useState<Stock[]>([]);
+interface RankingSectionProps {
+  increasingStocks: MockStock[];
+  // eslint-disable-next-line react/no-unused-prop-types
+  decreasingStocks: MockStock[];
+}
 
+export default function RankingSection({ increasingStocks }: RankingSectionProps) {
   const mockCategories = [
     {
       title: '상승',
@@ -19,15 +19,6 @@ export default function RankingSection() {
       isActive: false,
     },
   ];
-
-  useEffect(() => {
-    (async () => {
-      const { status, data, message } = await typedGet<ListApiResponse<Stock>>('stocks/');
-
-      invariant(status === 200 && data, message);
-      setStocks(data.results);
-    })();
-  }, []);
 
   return (
     <section className="bg-white">
@@ -52,15 +43,14 @@ export default function RankingSection() {
       </ContentWrapper>
       <ContentWrapper className="pt-8.75 pb-5">
         <ul className="h-[50rem]">
-          {stocks.map(({ code, krName }) => {
-            const mockPrice = Math.floor(Math.random() * 901234 + 5678);
-            const mockPercentage = Math.random() * 20 - 10;
-
-            const absolutePercentage = Math.abs(mockPercentage);
-            const isIncrease = absolutePercentage >= 0.01 && mockPercentage > 0;
-            const isDecrease = absolutePercentage >= 0.01 && mockPercentage < 0;
+          {increasingStocks.map(({
+            code, krName, price, fluctuationRate,
+          }) => {
+            const absoluteFluctuationRate = Math.abs(fluctuationRate);
+            const isIncrease = absoluteFluctuationRate >= 0.0001 && fluctuationRate > 0;
+            const isDecrease = absoluteFluctuationRate >= 0.0001 && fluctuationRate < 0;
             const displaySign = `${isIncrease ? '+' : ''}${isDecrease ? '-' : ''}`;
-            const displayPercentage = `${displaySign}${absolutePercentage.toFixed(2)}`;
+            const displayPercentage = `${displaySign}${(absoluteFluctuationRate * 100).toFixed(2)}`;
 
             return (
               <li key={code} className="flex items-center h-20 whitespace-nowrap shadow-[inset_0_-1px_0_0_rgba(0,0,0,0.1)] last:shadow-none">
@@ -87,7 +77,7 @@ export default function RankingSection() {
                     %
                   </div>
                   <div className="text-sm">
-                    {mockPrice.toLocaleString('ko-KR')}
+                    {price.toLocaleString('ko-KR')}
                     원
                   </div>
                 </div>

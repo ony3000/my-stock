@@ -175,3 +175,11 @@ classDiagram
     date 국내_휴일
   }
 ```
+
+### Glossary of terms
+- price: 주가[^1]
+- fluctuation rate: 등락률
+- dividend rate: 배당수익률
+- ex dividend date: 배당락일
+
+[^1]: 미니스탁(시즌1)은 실시간 주가를 표시하지 않았으므로, 사실상 전일 종가와 같음
