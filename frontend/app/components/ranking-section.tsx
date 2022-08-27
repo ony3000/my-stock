@@ -4,6 +4,7 @@ import invariant from 'tiny-invariant';
 import type { ListApiResponse } from '~/types/apis';
 import type { Stock } from '~/types/models';
 import { typedGet } from '~/plugins/axios';
+import { ContentWrapper } from '~/layouts';
 
 export default function RankingSection() {
   const [stocks, setStocks] = useState<Stock[]>([]);
@@ -31,7 +32,7 @@ export default function RankingSection() {
   return (
     <section className="bg-white">
       <h2 className="sr-only">유형별 주식 Top 10</h2>
-      <div className="h-13.75 border-b border-solid border-gray-300 px-6.25">
+      <ContentWrapper className="h-13.75 border-b border-solid border-gray-300">
         <ul className="flex items-end h-full text-sm font-bold">
           {mockCategories.map(({ title, isActive }) => (
             <li
@@ -48,8 +49,8 @@ export default function RankingSection() {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="pt-8.75 px-6.25 pb-5">
+      </ContentWrapper>
+      <ContentWrapper className="pt-8.75 pb-5">
         <ul className="h-[50rem]">
           {stocks.map(({ code, krName }) => {
             const mockPrice = Math.floor(Math.random() * 901234 + 5678);
@@ -100,7 +101,7 @@ export default function RankingSection() {
         >
           <span className="text-gray-700 text-[13px] leading-[1.125rem]">더보기</span>
         </button>
-      </div>
+      </ContentWrapper>
     </section>
   );
 }
