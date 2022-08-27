@@ -1,17 +1,13 @@
 import classNames from 'classnames';
-import invariant from 'tiny-invariant';
 import { ContentWrapper } from '~/layouts';
 
 export default function ExchangeRateSection() {
-  const now = new Date();
+  const month = 8;
+  const dayOfMonth = 26;
   const mockRate = 1331.3;
   const mockDifference = -3.9;
   const mockPercentage = -0.29;
-  const dateMatchResult = now.toLocaleDateString().match(/\. (\d+)\. (\d+)\./);
 
-  invariant(dateMatchResult);
-
-  const [, month, dayOfMonth] = dateMatchResult;
   const absoluteDifference = Math.abs(mockDifference);
   const absolutePercentage = Math.abs(mockPercentage);
   const isIncrease = absolutePercentage >= 0.01 && mockPercentage > 0;
