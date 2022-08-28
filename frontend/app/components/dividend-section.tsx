@@ -1,6 +1,6 @@
 import { QuestionMarkCircleIcon } from '@heroicons/react/outline';
 import invariant from 'tiny-invariant';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 import type { MockStock } from '~/types/mocks';
 import { ContentWrapper } from '~/layouts';
 
@@ -24,7 +24,7 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
             </div>
           </div>
         </ContentWrapper>
-        <Swiper
+        <ReactSwiper
           className="!px-5 iphone:!px-6.25"
           freeMode
           grabCursor
@@ -73,7 +73,7 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
               </SwiperSlide>
             );
           })}
-        </Swiper>
+        </ReactSwiper>
       </div>
     </section>
   );
