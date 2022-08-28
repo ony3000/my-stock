@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => ({
 
 export const links: LinksFunction = () => [
   { rel: 'stylesheet', href: styles },
-  { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.css' },
+  { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css' },
 ];
 
 export default function App() {

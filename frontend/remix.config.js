@@ -5,4 +5,9 @@ module.exports = {
   // assetsBuildDirectory: "public/build",
   // serverBuildPath: "build/index.js",
   // publicPath: "/build/",
+  serverDependenciesToBundle: [
+    /^ssr-window.*/,
+    /^dom7.*/,
+    /^swiper.*/,
+  ],
 };
