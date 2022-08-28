@@ -7,13 +7,3 @@
 * [React](https://reactjs.org/)
 * [Remix](https://remix.run/)
 * [ESLint](https://eslint.org/)
-
-### How to find and fix problems in code
-Find problems
-```shell
-$ yarn lint
-```
-Fix problems (not all, but as many as possible)
-```shell
-$ yarn lint --fix
-```
