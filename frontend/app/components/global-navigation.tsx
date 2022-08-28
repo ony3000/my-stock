@@ -42,7 +42,7 @@ export default function GlobalNavigation() {
   ];
 
   return (
-    <nav className="fixed bottom-0 w-full max-w-screen-sm h-15 bg-white shadow-[0_0_3px_0_rgba(0,0,0,0.1)]">
+    <nav className="fixed z-50 bottom-0 w-full max-w-screen-sm h-15 bg-white shadow-[0_0_3px_0_rgba(0,0,0,0.1)]">
       <ul className="flex h-full">
         {navigationItems.map(({ href, title, icon: IconComponent }) => (
           <li key={title} className="flex-1">
