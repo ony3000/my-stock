@@ -19,16 +19,6 @@ Or using `poetry run`:
 $ poetry run pytest
 ```
 
-### How to apply code style
-After virtualenv is activated:
-```shell
-(.venv) $ black .
-```
-Or using `poetry run`:
-```shell
-$ poetry run black .
-```
-
 ### How to export the lock file
 ```shell
 $ poetry export -f requirements.txt --output requirements.txt
