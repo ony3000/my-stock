@@ -10,6 +10,7 @@ import {
   BannerSection,
   DisclaimerSection,
   DividendSection,
+  ErrorDialog,
   ExchangeRateSection,
   GlobalNavigation,
   RankingSection,
@@ -82,6 +83,7 @@ export default function Home() {
         <ExchangeRateSection />
         <DisclaimerSection />
       </main>
+      <ErrorDialog />
     </div>
   );
 }
