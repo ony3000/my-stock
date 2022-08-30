@@ -2,6 +2,11 @@ from random import randrange
 
 from mystock.core.exceptions import (
     BadGateway,
+    Custom400,
+    Custom401,
+    Custom403,
+    Custom404,
+    Custom406,
     GatewayTimeout,
     InternalServerError,
     ServiceUnavailable,
@@ -10,13 +15,6 @@ from mystock.market.models import Stock
 from mystock.market.serializers import StockSerializer
 from rest_framework import status
 from rest_framework.decorators import api_view
-from rest_framework.exceptions import (
-    NotAcceptable,
-    NotAuthenticated,
-    NotFound,
-    ParseError,
-    PermissionDenied,
-)
 from rest_framework.response import Response
 
 
@@ -26,23 +24,23 @@ def random_400(request):
 
     if roulette < 10:
         # 400 Bad Request
-        raise ParseError()
+        raise Custom400()
 
     elif roulette < 20:
         # 401 Unauthorized
-        raise NotAuthenticated()
+        raise Custom401()
 
     elif roulette < 30:
         # 403 Forbidden
-        raise PermissionDenied()
+        raise Custom403()
 
     elif roulette < 40:
         # 404 Not Found
-        raise NotFound()
+        raise Custom404()
 
     elif roulette < 50:
         # 406 Not Acceptable
-        raise NotAcceptable()
+        raise Custom406()
 
     stocks = Stock.objects.all().filter(id__lte=5).order_by("id")
     serializer = StockSerializer(stocks, many=True)
