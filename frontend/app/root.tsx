@@ -1,3 +1,4 @@
+import { RecoilRoot } from 'recoil';
 import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
@@ -32,7 +33,9 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <RecoilRoot>
+          <Outlet />
+        </RecoilRoot>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

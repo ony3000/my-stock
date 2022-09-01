@@ -6,7 +6,9 @@ export type ListApiResponse<T = unknown> = {
 };
 
 export type ManuallyRaisedExceptionData = {
-  detail: string;
+  code: string;
+  title: string;
+  message: string;
 };
 
 export type ErrorResponseData = string | ManuallyRaisedExceptionData | undefined;
@@ -22,11 +24,8 @@ export type ErrorInformation = {
 export type RefinedResponse<T = unknown> = {
   status: number;
   data: T;
-  message?: undefined;
 };
 
-export type RefinedError = {
+export type RefinedError = ManuallyRaisedExceptionData & {
   status: number;
-  data?: undefined;
-  message: string;
 };

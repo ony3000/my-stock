@@ -23,13 +23,14 @@ instance.interceptors.response.use(
     const errorInfo = error.toJSON() as ErrorInformation;
     const refinedError: RefinedError = error.response ? {
       status: error.response.status,
-      message: (
-        typeof error.response.data === 'object'
-          ? error.response.data.detail
-          : (error.response.statusText || error.message)
-      ),
+      code: error.code || 'ERR_UNKNOWN',
+      title: error.response.statusText || error.name,
+      message: error.message,
+      ...(typeof error.response.data === 'object' ? error.response.data : {}),
     } : {
       status: Number(errorInfo.status),
+      code: errorInfo.code,
+      title: errorInfo.name,
       message: errorInfo.message,
     };
 
