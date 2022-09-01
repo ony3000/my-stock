@@ -24,10 +24,8 @@ export type ErrorInformation = {
 export type RefinedResponse<T = unknown> = {
   status: number;
   data: T;
-  message?: undefined;
 };
 
 export type RefinedError = ManuallyRaisedExceptionData & {
   status: number;
-  data?: undefined;
 };

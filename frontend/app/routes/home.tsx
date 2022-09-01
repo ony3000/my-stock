@@ -16,6 +16,7 @@ import {
   RankingSection,
   SectionDivider,
 } from '~/components';
+import { isApiError } from '~/utils/type-guard';
 
 const injectMockProps = (stock: Stock): MockStock => {
   const oneDayInMilliseconds = 1000 * 60 * 60 * 24;
@@ -33,11 +34,11 @@ const injectMockProps = (stock: Stock): MockStock => {
 };
 
 export const loader: LoaderFunction = async () => {
-  const { status, data, message } = await typedGet<ListApiResponse<Stock>>('stocks/');
+  const response = await typedGet<ListApiResponse<Stock>>('stocks/');
 
-  invariant(status === 200 && data, message);
+  invariant(!isApiError(response));
 
-  const stocks = data.results;
+  const stocks = response.data.results;
   const mockIncreasingStocks = stocks.map<MockStock>(injectMockProps).sort(
     (former, latter) => (latter.fluctuationRate - former.fluctuationRate),
   );
