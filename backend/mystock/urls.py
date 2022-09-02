@@ -15,6 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 from mystock.core.views import random_400, random_500
 from mystock.market.views import StockViewSet
 from rest_framework import routers
@@ -23,6 +28,17 @@ router = routers.DefaultRouter()
 router.register(r"stocks", StockViewSet)
 
 urlpatterns = [
+    path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "api/swagger/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    path(
+        "api/redoc/",
+        SpectacularRedocView.as_view(url_name="schema"),
+        name="redoc",
+    ),
     path("api/v1/random-400/", random_400, name="Randomly raises 4xx errors"),
     path("api/v1/random-500/", random_500, name="Randomly raises 5xx errors"),
     path("api/v1/", include(router.urls)),
