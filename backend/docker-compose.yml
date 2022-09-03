@@ -8,6 +8,8 @@ services:
     ports:
       - "5432:5432"
     environment:
+      - LC_COLLATE=C
+      - LC_CTYPE=C
       - POSTGRES_DB=mystockdb
       - POSTGRES_USER=mystock
       - POSTGRES_PASSWORD=c10neC0ding1nZozz
