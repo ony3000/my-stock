@@ -20,7 +20,6 @@ from drf_spectacular.views import (
     SpectacularRedocView,
     SpectacularSwaggerView,
 )
-from mystock.core.views import random_400, random_500
 from mystock.market.views import StockViewSet
 from rest_framework import routers
 
@@ -39,8 +38,6 @@ urlpatterns = [
         SpectacularRedocView.as_view(url_name="schema"),
         name="redoc",
     ),
-    path("api/v1/random-400/", random_400, name="Randomly raises 4xx errors"),
-    path("api/v1/random-500/", random_500, name="Randomly raises 5xx errors"),
     path("api/v1/", include(router.urls)),
     path("admin/", admin.site.urls),
 ]
