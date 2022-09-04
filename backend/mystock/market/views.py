@@ -1,4 +1,3 @@
-from django.db.models.functions import Collate
 from django.shortcuts import render
 from drf_spectacular.utils import extend_schema
 from mystock.market.models import Stock
@@ -18,7 +17,7 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
     )
     @action(detail=False)
     def increasing(self, request):
-        stocks = Stock.objects.all().order_by(Collate("kr_name", "C").desc())
+        stocks = Stock.objects.all().order_by("-kr_name")
 
         page = self.paginate_queryset(stocks)
         if page is not None:
@@ -34,7 +33,7 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
     )
     @action(detail=False)
     def decreasing(self, request):
-        stocks = Stock.objects.all().order_by(Collate("kr_name", "C"))
+        stocks = Stock.objects.all().order_by("kr_name")
 
         page = self.paginate_queryset(stocks)
         if page is not None:
