@@ -5,6 +5,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: AAPL
     kr_name: 애플
+    kr_name_initial_consonant: ㅇㅍ
+    us_name: Apple Inc
 - model: market.stock
   pk: 2
   fields:
@@ -12,6 +14,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: MSFT
     kr_name: 마이크로소프트
+    kr_name_initial_consonant: ㅁㅇㅋㄹㅅㅍㅌ
+    us_name: Microsoft Corporation
 - model: market.stock
   pk: 3
   fields:
@@ -19,6 +23,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: AMZN
     kr_name: 아마존닷컴
+    kr_name_initial_consonant: ㅇㅁㅈㄷㅋ
+    us_name: Amazon Inc
 - model: market.stock
   pk: 4
   fields:
@@ -26,6 +32,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: TSLA
     kr_name: 테슬라
+    kr_name_initial_consonant: ㅌㅅㄹ
+    us_name: Tesla Inc
 - model: market.stock
   pk: 5
   fields:
@@ -33,6 +41,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: GOOG
     kr_name: 알파벳 C주
+    kr_name_initial_consonant: ㅇㅍㅂ Cㅈ
+    us_name: Alphabet Inc
 - model: market.stock
   pk: 6
   fields:
@@ -40,6 +50,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: GOOGL
     kr_name: 알파벳 A주
+    kr_name_initial_consonant: ㅇㅍㅂ Aㅈ
+    us_name: Alphabet Inc
 - model: market.stock
   pk: 7
   fields:
@@ -47,6 +59,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: UNH
     kr_name: 유나이티드헬스 그룹
+    kr_name_initial_consonant: ㅇㄴㅇㅌㄷㅎㅅ ㄱㄹ
+    us_name: United Health Group Inc
 - model: market.stock
   pk: 8
   fields:
@@ -54,13 +68,15 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: NVDA
     kr_name: 엔비디아
+    kr_name_initial_consonant: ㅇㅂㄷㅇ
+    us_name: Nvidia Corporation
 - model: market.stock
   pk: 9
   fields:
     created_at: 2022-08-11 23:32:11.802202+09:00
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: TSM
-    kr_name: TSMC ADR
+    us_name: TSMC ADR
 - model: market.stock
   pk: 10
   fields:
@@ -68,6 +84,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: JNJ
     kr_name: 존슨앤드존슨
+    kr_name_initial_consonant: ㅈㅅㅇㄷㅈㅅ
+    us_name: Johnson & Johnson
 - model: market.stock
   pk: 11
   fields:
@@ -75,6 +93,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: META
     kr_name: 메타 플랫폼스(페이스북)
+    kr_name_initial_consonant: ㅁㅌ ㅍㄹㅍㅅ(ㅍㅇㅅㅂ)
+    us_name: Meta Platforms Inc
 - model: market.stock
   pk: 12
   fields:
@@ -82,6 +102,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: BRK/B
     kr_name: 버크셔 해서웨이 B주
+    kr_name_initial_consonant: ㅂㅋㅅ ㅎㅅㅇㅇ Bㅈ
+    us_name: Berkshire Hathaway Inc
 - model: market.stock
   pk: 13
   fields:
@@ -89,6 +111,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: XOM
     kr_name: 엑슨 모빌
+    kr_name_initial_consonant: ㅇㅅ ㅁㅂ
+    us_name: Exxon Mobil Corporation
 - model: market.stock
   pk: 14
   fields:
@@ -96,6 +120,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: V
     kr_name: 비자
+    kr_name_initial_consonant: ㅂㅈ
+    us_name: Visa Inc
 - model: market.stock
   pk: 15
   fields:
@@ -103,3 +129,5 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: PG
     kr_name: 프록터 앤드 갬블
+    kr_name_initial_consonant: ㅍㄹㅌ ㅇㄷ ㄱㅂ
+    us_name: The Procter & Gamble Company
