@@ -5,4 +5,10 @@ from rest_framework import serializers
 class StockSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Stock
-        fields = ["code", "kr_name", "kr_name_initial_consonant", "us_name"]
+        fields = [
+            "code",
+            "logo_image",
+            "kr_name",
+            "kr_name_initial_consonant",
+            "us_name",
+        ]

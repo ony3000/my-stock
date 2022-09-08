@@ -1,11 +1,27 @@
+import os
+
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from mystock.core.models import BaseModel
+from mystock.core.storage import UniqueFilenameStorage
+
+
+def stock_logo_image_path(stock: "Stock", filename: str) -> str:
+    (_, ext) = os.path.splitext(filename)
+
+    return f"media/{stock.code}{ext}"
 
 
 class Stock(BaseModel):
     code = models.CharField(help_text="주식코드", max_length=8, unique=True)
+    logo_image = models.ImageField(
+        help_text="로고 이미지",
+        upload_to=stock_logo_image_path,
+        storage=UniqueFilenameStorage,
+        null=True,
+        blank=True,
+    )
     kr_name = models.CharField(
         help_text="국문 주식명", max_length=64, default="", blank=True
     )
