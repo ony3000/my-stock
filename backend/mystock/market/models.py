@@ -31,6 +31,14 @@ class Stock(BaseModel):
     us_name = models.CharField(
         help_text="영문 주식명", max_length=128, default="", blank=True
     )
+    krw_price = models.IntegerField(help_text="원화 주가", default=0, blank=True)
+    krw_price_fluctuation_rate = models.DecimalField(
+        help_text="원화 주가 등락률 (단위: %)",
+        max_digits=16,
+        decimal_places=2,
+        default=0,
+        blank=True,
+    )
 
     def __str__(self):
         readable_name = self.kr_name or self.us_name

@@ -7,6 +7,8 @@
     kr_name: 애플
     kr_name_initial_consonant: ㅇㅍ
     us_name: Apple Inc
+    krw_price: 213973
+    krw_price_fluctuation_rate: -0.96
 - model: market.stock
   pk: 2
   fields:
@@ -16,6 +18,8 @@
     kr_name: 마이크로소프트
     kr_name_initial_consonant: ㅁㅇㅋㄹㅅㅍㅌ
     us_name: Microsoft Corporation
+    krw_price: 358128
+    krw_price_fluctuation_rate: 0.17
 - model: market.stock
   pk: 3
   fields:
@@ -25,6 +29,8 @@
     kr_name: 아마존닷컴
     kr_name_initial_consonant: ㅇㅁㅈㄷㅋ
     us_name: Amazon Inc
+    krw_price: 179840
+    krw_price_fluctuation_rate: 0.26
 - model: market.stock
   pk: 4
   fields:
@@ -34,6 +40,8 @@
     kr_name: 테슬라
     kr_name_initial_consonant: ㅌㅅㄹ
     us_name: Tesla Inc
+    krw_price: 400712
+    krw_price_fluctuation_rate: 1.96
 - model: market.stock
   pk: 5
   fields:
@@ -43,6 +51,8 @@
     kr_name: 알파벳 C주
     kr_name_initial_consonant: ㅇㅍㅂ Cㅈ
     us_name: Alphabet Inc
+    krw_price: 151580
+    krw_price_fluctuation_rate: -0.96
 - model: market.stock
   pk: 6
   fields:
@@ -52,6 +62,8 @@
     kr_name: 알파벳 A주
     kr_name_initial_consonant: ㅇㅍㅂ Aㅈ
     us_name: Alphabet Inc
+    krw_price: 150139
+    krw_price_fluctuation_rate: -0.98
 - model: market.stock
   pk: 7
   fields:
@@ -61,6 +73,8 @@
     kr_name: 유나이티드헬스 그룹
     kr_name_initial_consonant: ㅇㄴㅇㅌㄷㅎㅅ ㄱㄹ
     us_name: United Health Group Inc
+    krw_price: 728474
+    krw_price_fluctuation_rate: 1.12
 - model: market.stock
   pk: 8
   fields:
@@ -70,6 +84,8 @@
     kr_name: 엔비디아
     kr_name_initial_consonant: ㅇㅂㄷㅇ
     us_name: Nvidia Corporation
+    krw_price: 193803
+    krw_price_fluctuation_rate: 2.01
 - model: market.stock
   pk: 9
   fields:
@@ -77,6 +93,8 @@
     updated_at: 2022-08-11 23:32:11.802202+09:00
     code: TSM
     us_name: TSMC ADR
+    krw_price: 111156
+    krw_price_fluctuation_rate: 0.36
 - model: market.stock
   pk: 10
   fields:
@@ -86,6 +104,8 @@
     kr_name: 존슨앤드존슨
     kr_name_initial_consonant: ㅈㅅㅇㄷㅈㅅ
     us_name: Johnson & Johnson
+    krw_price: 229115
+    krw_price_fluctuation_rate: 0.80
 - model: market.stock
   pk: 11
   fields:
@@ -95,6 +115,8 @@
     kr_name: 메타 플랫폼스(페이스북)
     kr_name_initial_consonant: ㅁㅌ ㅍㄹㅍㅅ(ㅍㅇㅅㅂ)
     us_name: Meta Platforms Inc
+    krw_price: 224502
+    krw_price_fluctuation_rate: 1.04
 - model: market.stock
   pk: 12
   fields:
@@ -104,6 +126,8 @@
     kr_name: 버크셔 해서웨이 B주
     kr_name_initial_consonant: ㅂㅋㅅ ㅎㅅㅇㅇ Bㅈ
     us_name: Berkshire Hathaway Inc
+    krw_price: 392511
+    krw_price_fluctuation_rate: 0.82
 - model: market.stock
   pk: 13
   fields:
@@ -113,6 +137,8 @@
     kr_name: 엑슨 모빌
     kr_name_initial_consonant: ㅇㅅ ㅁㅂ
     us_name: Exxon Mobil Corporation
+    krw_price: 131479
+    krw_price_fluctuation_rate: 0.82
 - model: market.stock
   pk: 14
   fields:
@@ -122,6 +148,8 @@
     kr_name: 비자
     kr_name_initial_consonant: ㅂㅈ
     us_name: Visa Inc
+    krw_price: 278044
+    krw_price_fluctuation_rate: 0.14
 - model: market.stock
   pk: 15
   fields:
@@ -131,3 +159,5 @@
     kr_name: 프록터 앤드 갬블
     kr_name_initial_consonant: ㅍㄹㅌ ㅇㄷ ㄱㅂ
     us_name: The Procter & Gamble Company
+    krw_price: 190977
+    krw_price_fluctuation_rate: 0.13

@@ -11,4 +11,6 @@ class StockSerializer(serializers.HyperlinkedModelSerializer):
             "kr_name",
             "kr_name_initial_consonant",
             "us_name",
+            "krw_price",
+            "krw_price_fluctuation_rate",
         ]
