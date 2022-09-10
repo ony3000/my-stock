@@ -1,11 +1,11 @@
-import type { Nullable, DecimalPattern, UrlPattern } from '~/types/common';
+import type { Nullable, DecimalPatternString, UrlPatternString } from '~/types/common';
 
 export type Stock = {
   code: string;
-  logoImage: Nullable<UrlPattern>;
+  logoImage: Nullable<UrlPatternString>;
   krName: string;
   krNameInitialConsonant: string;
   usName: string;
   krwPrice: number;
-  krwPriceFluctuationRate: DecimalPattern;
+  krwPriceFluctuationRate: DecimalPatternString;
 };
