@@ -17,7 +17,7 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
     )
     @action(detail=False)
     def increasing(self, request):
-        stocks = Stock.objects.all().order_by("-kr_name")
+        stocks = Stock.objects.all().order_by("-krw_price_fluctuation_rate")
 
         page = self.paginate_queryset(stocks)
         if page is not None:
@@ -33,7 +33,7 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
     )
     @action(detail=False)
     def decreasing(self, request):
-        stocks = Stock.objects.all().order_by("kr_name")
+        stocks = Stock.objects.all().order_by("krw_price_fluctuation_rate")
 
         page = self.paginate_queryset(stocks)
         if page is not None:
