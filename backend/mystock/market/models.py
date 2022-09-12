@@ -40,12 +40,12 @@ class Stock(BaseModel):
         blank=True,
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         readable_name = self.kr_name or self.us_name
 
         return f"{readable_name} ({self.code})"
 
-    def clean(self):
+    def clean(self) -> None:
         kr_name_field = self._meta.get_field("kr_name")
         us_name_field = self._meta.get_field("us_name")
 
