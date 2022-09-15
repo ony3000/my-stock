@@ -8,6 +8,7 @@
 * [Black](https://black.readthedocs.io/en/stable/)
 * [Docker](https://www.docker.com/)
 * [PostgreSQL](https://www.postgresql.org/)
+* [mypy](http://www.mypy-lang.org/)
 
 ### How to test a code
 After virtualenv is activated:
