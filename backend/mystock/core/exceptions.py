@@ -1,7 +1,7 @@
 from rest_framework.exceptions import APIException
 
 
-def make_detail(code: str, title: str, message: str) -> dict:
+def make_detail(code: str, title: str, message: str) -> dict[str, str]:
     return {
         "code": code,
         "title": title,
