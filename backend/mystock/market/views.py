@@ -4,6 +4,7 @@ from mystock.market.models import Stock
 from mystock.market.serializers import StockSerializer
 from rest_framework import viewsets
 from rest_framework.decorators import action
+from rest_framework.request import Request
 from rest_framework.response import Response
 
 
@@ -16,7 +17,7 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
         responses={200: StockSerializer(many=True)},
     )
     @action(detail=False)
-    def increasing(self, request):
+    def increasing(self, request: Request) -> Response:
         stocks = Stock.objects.all().order_by("-krw_price_fluctuation_rate")
 
         page = self.paginate_queryset(stocks)
@@ -32,7 +33,7 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
         responses={200: StockSerializer(many=True)},
     )
     @action(detail=False)
-    def decreasing(self, request):
+    def decreasing(self, request: Request) -> Response:
         stocks = Stock.objects.all().order_by("krw_price_fluctuation_rate")
 
         page = self.paginate_queryset(stocks)
