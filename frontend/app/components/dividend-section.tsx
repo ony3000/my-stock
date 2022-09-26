@@ -3,6 +3,7 @@ import invariant from 'tiny-invariant';
 import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 import type { MockStock } from '~/types/mocks';
 import { ContentWrapper } from '~/layouts';
+import { makeGravatarUrl } from '~/utils/gravatar';
 
 interface DividendSectionProps {
   stocks: MockStock[];
@@ -48,7 +49,7 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
                   <div>
                     <img
                       className="w-6.25 h-6.25 object-contain rounded-full"
-                      src={logoImage ?? 'https://via.placeholder.com/80'}
+                      src={logoImage ?? makeGravatarUrl(code)}
                       alt={`${displayName} 아이콘`}
                     />
                   </div>

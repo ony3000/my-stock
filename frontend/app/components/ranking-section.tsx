@@ -4,6 +4,7 @@ import type Swiper from 'swiper';
 import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 import type { MockStock } from '~/types/mocks';
 import { ContentWrapper } from '~/layouts';
+import { makeGravatarUrl } from '~/utils/gravatar';
 
 interface RankingSectionProps {
   increasingStocks: MockStock[];
@@ -82,7 +83,7 @@ export default function RankingSection({
                       <div>
                         <img
                           className="w-10 h-10 object-contain rounded-full"
-                          src={logoImage ?? 'https://via.placeholder.com/80'}
+                          src={logoImage ?? makeGravatarUrl(code)}
                           alt={`${displayName} 아이콘`}
                         />
                       </div>
