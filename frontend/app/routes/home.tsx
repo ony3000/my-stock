@@ -24,8 +24,6 @@ const injectMockProps = (stock: Stock): MockStock => {
 
   return {
     ...stock,
-    price: Math.floor(Math.random() * 901234 + 5678),
-    fluctuationRate: Number(((Math.random() * 2 - 1) / 10).toFixed(4)),
     dividendRate: Number(((Math.random() * 1000 + 1) / 10000).toFixed(4)),
     exDividendDate: new Date(
       now.getTime() + oneDayInMilliseconds * Math.floor(Math.random() * 5 + 2),
@@ -34,17 +32,26 @@ const injectMockProps = (stock: Stock): MockStock => {
 };
 
 export const loader: LoaderFunction = async () => {
-  const response = await typedGet<ListApiResponse<Stock>>('stocks/');
+  const [
+    increasingStocksResponse,
+    decreasingStocksResponse,
+    stocksResponse,
+  ] = await Promise.all([
+    typedGet<ListApiResponse<Stock>>('stocks/increasing/'),
+    typedGet<ListApiResponse<Stock>>('stocks/decreasing/'),
+    typedGet<ListApiResponse<Stock>>('stocks/'),
+  ]);
 
-  invariant(!isApiError(response));
+  invariant(!isApiError(increasingStocksResponse));
+  invariant(!isApiError(decreasingStocksResponse));
+  invariant(!isApiError(stocksResponse));
 
-  const stocks = response.data.results;
-  const mockIncreasingStocks = stocks.map<MockStock>(injectMockProps).sort(
-    (former, latter) => (latter.fluctuationRate - former.fluctuationRate),
-  );
-  const mockDecreasingStocks = stocks.map<MockStock>(injectMockProps).sort(
-    (former, latter) => (former.fluctuationRate - latter.fluctuationRate),
-  );
+  const increasingStocks = increasingStocksResponse.data.results;
+  const decreasingStocks = decreasingStocksResponse.data.results;
+  const stocks = stocksResponse.data.results;
+
+  const mockIncreasingStocks = increasingStocks.map<MockStock>(injectMockProps);
+  const mockDecreasingStocks = decreasingStocks.map<MockStock>(injectMockProps);
   const mockDividendStocks = stocks.map<MockStock>(injectMockProps).sort(
     (former, latter) => (
       former.exDividendDate.slice(0, 10).localeCompare(latter.exDividendDate.slice(0, 10))

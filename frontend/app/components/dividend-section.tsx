@@ -3,6 +3,7 @@ import invariant from 'tiny-invariant';
 import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 import type { MockStock } from '~/types/mocks';
 import { ContentWrapper } from '~/layouts';
+import { makeGravatarUrl } from '~/utils/gravatar';
 
 interface DividendSectionProps {
   stocks: MockStock[];
@@ -32,8 +33,9 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
           slidesPerView="auto"
         >
           {stocks.map(({
-            code, krName, price, dividendRate, exDividendDate,
+            code, logoImage, krName, usName, krwPrice, dividendRate, exDividendDate,
           }) => {
+            const displayName = krName || usName;
             const dateMatchResult = exDividendDate.match(/^\d+-(\d+)-(\d+)/);
 
             invariant(dateMatchResult);
@@ -47,11 +49,11 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
                   <div>
                     <img
                       className="w-6.25 h-6.25 object-contain rounded-full"
-                      src="https://via.placeholder.com/80"
-                      alt={`임시 ${krName} 아이콘`}
+                      src={logoImage ?? makeGravatarUrl(code)}
+                      alt={`${displayName} 아이콘`}
                     />
                   </div>
-                  <div className="mt-[0.4375rem] text-[13px] leading-[1.125rem] truncate">{krName}</div>
+                  <div className="mt-[0.4375rem] text-[13px] leading-[1.125rem] truncate">{displayName}</div>
                   <div className="mt-[0.875rem] text-[15px] leading-[1.375rem]">
                     연
                     {' '}
@@ -59,7 +61,7 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
                     %
                   </div>
                   <div className="mt-[0.1875rem] text-gray-400 text-xs">
-                    {price.toLocaleString('ko-KR')}
+                    {krwPrice.toLocaleString('ko-KR')}
                     원
                   </div>
                   <div className="mt-[0.8125rem] text-red-500 text-xs">
