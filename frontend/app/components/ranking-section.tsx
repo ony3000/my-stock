@@ -69,7 +69,7 @@ export default function RankingSection({
             <ContentWrapper className="pt-8.75 pb-5">
               <ul className="h-[50rem]">
                 {stocks.map(({
-                  code, krName, usName, krwPrice, krwPriceFluctuationRate,
+                  code, logoImage, krName, usName, krwPrice, krwPriceFluctuationRate,
                 }) => {
                   const displayName = krName || usName;
                   const numericFluctuationRate = Number(krwPriceFluctuationRate);
@@ -82,8 +82,8 @@ export default function RankingSection({
                       <div>
                         <img
                           className="w-10 h-10 object-contain rounded-full"
-                          src="https://via.placeholder.com/80"
-                          alt={`임시 ${displayName} 아이콘`}
+                          src={logoImage ?? 'https://via.placeholder.com/80'}
+                          alt={`${displayName} 아이콘`}
                         />
                       </div>
                       <div className="flex-1 overflow-hidden mx-2.5">

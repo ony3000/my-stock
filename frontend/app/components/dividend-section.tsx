@@ -32,7 +32,7 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
           slidesPerView="auto"
         >
           {stocks.map(({
-            code, krName, usName, krwPrice, dividendRate, exDividendDate,
+            code, logoImage, krName, usName, krwPrice, dividendRate, exDividendDate,
           }) => {
             const displayName = krName || usName;
             const dateMatchResult = exDividendDate.match(/^\d+-(\d+)-(\d+)/);
@@ -48,8 +48,8 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
                   <div>
                     <img
                       className="w-6.25 h-6.25 object-contain rounded-full"
-                      src="https://via.placeholder.com/80"
-                      alt={`임시 ${displayName} 아이콘`}
+                      src={logoImage ?? 'https://via.placeholder.com/80'}
+                      alt={`${displayName} 아이콘`}
                     />
                   </div>
                   <div className="mt-[0.4375rem] text-[13px] leading-[1.125rem] truncate">{displayName}</div>
