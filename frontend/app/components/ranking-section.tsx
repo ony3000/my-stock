@@ -69,13 +69,13 @@ export default function RankingSection({
             <ContentWrapper className="pt-8.75 pb-5">
               <ul className="h-[50rem]">
                 {stocks.map(({
-                  code, krName, price, fluctuationRate,
+                  code, krName, usName, krwPrice, krwPriceFluctuationRate,
                 }) => {
-                  const absoluteFluctuationRate = Math.abs(fluctuationRate);
-                  const isIncrease = absoluteFluctuationRate >= 0.0001 && fluctuationRate > 0;
-                  const isDecrease = absoluteFluctuationRate >= 0.0001 && fluctuationRate < 0;
-                  const displaySign = `${isIncrease ? '+' : ''}${isDecrease ? '-' : ''}`;
-                  const displayPercentage = `${displaySign}${(absoluteFluctuationRate * 100).toFixed(2)}`;
+                  const displayName = krName || usName;
+                  const numericFluctuationRate = Number(krwPriceFluctuationRate);
+                  const isRatePositive = numericFluctuationRate >= 0.01;
+                  const isRateNegative = numericFluctuationRate <= -0.01;
+                  const displayFluctuationRate = `${isRatePositive ? '+' : ''}${krwPriceFluctuationRate}`;
 
                   return (
                     <li key={code} className="flex items-center h-20 whitespace-nowrap shadow-[inset_0_-1px_0_0_rgba(0,0,0,0.1)] last:shadow-none">
@@ -83,26 +83,26 @@ export default function RankingSection({
                         <img
                           className="w-10 h-10 object-contain rounded-full"
                           src="https://via.placeholder.com/80"
-                          alt={`임시 ${krName} 아이콘`}
+                          alt={`임시 ${displayName} 아이콘`}
                         />
                       </div>
                       <div className="flex-1 overflow-hidden mx-2.5">
-                        <div className="overflow-hidden text-ellipsis">{krName}</div>
+                        <div className="overflow-hidden text-ellipsis">{displayName}</div>
                         <div className="text-xs text-gray-400">{code}</div>
                       </div>
                       <div className="text-right">
                         <div
                           className={classNames({
-                            'text-red-500': isIncrease,
-                            'text-blue-500': isDecrease,
-                            'text-gray-400': !isIncrease && !isDecrease,
+                            'text-red-500': isRatePositive,
+                            'text-blue-500': isRateNegative,
+                            'text-gray-400': !isRatePositive && !isRateNegative,
                           })}
                         >
-                          {displayPercentage}
+                          {displayFluctuationRate}
                           %
                         </div>
                         <div className="text-sm">
-                          {price.toLocaleString('ko-KR')}
+                          {krwPrice.toLocaleString('ko-KR')}
                           원
                         </div>
                       </div>

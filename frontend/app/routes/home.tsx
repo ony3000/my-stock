@@ -24,8 +24,6 @@ const injectMockProps = (stock: Stock): MockStock => {
 
   return {
     ...stock,
-    price: Math.floor(Math.random() * 901234 + 5678),
-    fluctuationRate: Number(((Math.random() * 2 - 1) / 10).toFixed(4)),
     dividendRate: Number(((Math.random() * 1000 + 1) / 10000).toFixed(4)),
     exDividendDate: new Date(
       now.getTime() + oneDayInMilliseconds * Math.floor(Math.random() * 5 + 2),
@@ -52,12 +50,8 @@ export const loader: LoaderFunction = async () => {
   const decreasingStocks = decreasingStocksResponse.data.results;
   const stocks = stocksResponse.data.results;
 
-  const mockIncreasingStocks = increasingStocks.map<MockStock>(injectMockProps).sort(
-    (former, latter) => (latter.fluctuationRate - former.fluctuationRate),
-  );
-  const mockDecreasingStocks = decreasingStocks.map<MockStock>(injectMockProps).sort(
-    (former, latter) => (former.fluctuationRate - latter.fluctuationRate),
-  );
+  const mockIncreasingStocks = increasingStocks.map<MockStock>(injectMockProps);
+  const mockDecreasingStocks = decreasingStocks.map<MockStock>(injectMockProps);
   const mockDividendStocks = stocks.map<MockStock>(injectMockProps).sort(
     (former, latter) => (
       former.exDividendDate.slice(0, 10).localeCompare(latter.exDividendDate.slice(0, 10))
