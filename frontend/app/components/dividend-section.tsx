@@ -40,7 +40,6 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
 
             invariant(dateMatchResult);
 
-            const displayPercentage = (dividendRate * 100).toFixed(2);
             const [, month, dayOfMonth] = dateMatchResult;
 
             return (
@@ -57,7 +56,7 @@ export default function DividendSection({ stocks }: DividendSectionProps) {
                   <div className="mt-[0.875rem] text-[15px] leading-[1.375rem]">
                     연
                     {' '}
-                    {displayPercentage}
+                    {dividendRate}
                     %
                   </div>
                   <div className="mt-[0.1875rem] text-gray-400 text-xs">

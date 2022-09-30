@@ -2,6 +2,7 @@ import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
+import type { DecimalPatternString } from '~/types/common';
 import type { ListApiResponse } from '~/types/apis';
 import type { MockStock } from '~/types/mocks';
 import type { Stock } from '~/types/models';
@@ -16,15 +17,18 @@ import {
   RankingSection,
   SectionDivider,
 } from '~/components';
-import { isApiError } from '~/utils/type-guard';
+import { isApiError, isDecimalPatternString } from '~/utils/type-guard';
 
 const injectMockProps = (stock: Stock): MockStock => {
+  const randomRate = ((Math.random() * 1000 + 1) / 100).toFixed(2);
   const oneDayInMilliseconds = 1000 * 60 * 60 * 24;
   const now = new Date();
 
+  invariant(isDecimalPatternString(randomRate));
+
   return {
     ...stock,
-    dividendRate: Number(((Math.random() * 1000 + 1) / 10000).toFixed(4)),
+    dividendRate: randomRate,
     exDividendDate: new Date(
       now.getTime() + oneDayInMilliseconds * Math.floor(Math.random() * 5 + 2),
     ).toJSON(),
@@ -55,7 +59,7 @@ export const loader: LoaderFunction = async () => {
   const mockDividendStocks = stocks.map<MockStock>(injectMockProps).sort(
     (former, latter) => (
       former.exDividendDate.slice(0, 10).localeCompare(latter.exDividendDate.slice(0, 10))
-      || latter.dividendRate - former.dividendRate
+      || Number(latter.dividendRate) - Number(former.dividendRate)
     ),
   );
 

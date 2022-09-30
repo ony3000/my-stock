@@ -1,6 +1,7 @@
+import type { DecimalPatternString } from '~/types/common';
 import type { Stock } from './models';
 
 export type MockStock = Stock & {
-  dividendRate: number;
+  dividendRate: DecimalPatternString;
   exDividendDate: string;
 };
