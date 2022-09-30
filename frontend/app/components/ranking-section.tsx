@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames';
 import type Swiper from 'swiper';
+import { Thumbs } from 'swiper';
 import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 import type { MockStock } from '~/types/mocks';
 import { ContentWrapper } from '~/layouts';
@@ -15,9 +16,7 @@ export default function RankingSection({
   increasingStocks,
   decreasingStocks,
 }: RankingSectionProps) {
-  const [categorySwiper, setCategorySwiper] = useState<Swiper | null>(null);
-  const [stockSwiper, setStockSwiper] = useState<Swiper | null>(null);
-  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
+  const [thumbsSwiper, setThumbsSwiper] = useState<Swiper | null>(null);
 
   const mockCategories = [
     {
@@ -34,36 +33,26 @@ export default function RankingSection({
     <section className="bg-white">
       <h2 className="sr-only">유형별 주식 Top 10</h2>
       <ReactSwiper
-        className="h-13.75 border-b border-solid border-gray-300 !px-5 iphone:!px-6.25"
+        className="thumbs-swiper h-13.75 border-b border-solid border-gray-300 !px-5 iphone:!px-6.25"
+        modules={[Thumbs]}
         freeMode
         grabCursor
         spaceBetween={30}
         slidesPerView="auto"
-        onSwiper={setCategorySwiper}
+        onSwiper={setThumbsSwiper}
       >
-        {mockCategories.map(({ title }, index) => (
+        {mockCategories.map(({ title }) => (
           <SwiperSlide key={title} className="flex items-end !w-auto h-full text-sm font-bold">
-            <div
-              className={classNames('border-b-[3px]', 'border-solid', {
-                'border-blue-400': (activeCategoryIndex === index),
-                'text-blue-400': (activeCategoryIndex === index),
-                'border-transparent': (activeCategoryIndex !== index),
-              })}
-            >
-              <button type="button" className="py-2.5" onClick={() => stockSwiper?.slideTo(index)}>
-                {title}
-              </button>
+            <div className="category-title border-b-[3px] border-solid border-transparent pb-2.5">
+              {title}
             </div>
           </SwiperSlide>
         ))}
       </ReactSwiper>
       <ReactSwiper
+        modules={[Thumbs]}
+        thumbs={{ swiper: thumbsSwiper }}
         grabCursor
-        onSwiper={setStockSwiper}
-        onSlideChange={(swiper) => {
-          categorySwiper?.slideTo(swiper.activeIndex);
-          setActiveCategoryIndex(swiper.activeIndex);
-        }}
       >
         {mockCategories.map(({ title, stocks }) => (
           <SwiperSlide key={title}>
