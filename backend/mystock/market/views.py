@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from drf_spectacular.utils import extend_schema
 from mystock.market.models import Stock
-from mystock.market.serializers import StockSerializer, StockKeywordSerializer
+from mystock.market.serializers import StockSerializer, SearchableStockSerializer
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.request import Request
@@ -47,11 +47,11 @@ class StockViewSet(viewsets.ReadOnlyModelViewSet):
 
 class BulkStockViewSet(viewsets.ViewSet):
     @extend_schema(
-        description="검색 키워드 목록 (without pagination)",
-        responses={200: StockKeywordSerializer(many=True)},
+        description="검색 가능한 주식 목록 (without pagination)",
+        responses={200: SearchableStockSerializer(many=True)},
     )
-    @action(detail=False, url_path="stock-keywords")
-    def stock_keywords(self, request: Request) -> Response:
+    @action(detail=False, url_path="searchable-stocks")
+    def searchable_stocks(self, request: Request) -> Response:
         stocks = Stock.objects.all().order_by("id")
-        serializer = StockKeywordSerializer(stocks, many=True)
+        serializer = SearchableStockSerializer(stocks, many=True)
         return Response(serializer.data)
