@@ -20,7 +20,7 @@ export default function GlobalNavigation() {
       icon: HomeIcon,
     },
     {
-      href: '#',
+      href: '/search',
       title: '검색',
       icon: SearchIcon,
     },
