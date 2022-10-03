@@ -7,13 +7,12 @@ import type { ListApiResponse } from '~/types/apis';
 import type { MockStock } from '~/types/mocks';
 import type { Stock } from '~/types/models';
 import { typedGet } from '~/plugins/axios';
+import { PageContainer } from '~/layouts';
 import {
   BannerSection,
   DisclaimerSection,
   DividendSection,
-  ErrorDialog,
   ExchangeRateSection,
-  GlobalNavigation,
   RankingSection,
   SectionDivider,
 } from '~/components';
@@ -78,24 +77,19 @@ export default function Home() {
   }>();
 
   return (
-    <div className="container max-w-screen-sm pb-15 bg-gray-100">
-      <h1 className="sr-only">홈</h1>
-      <GlobalNavigation />
-      <main>
-        <BannerSection />
-        <SectionDivider />
-        <RankingSection
-          increasingStocks={mockStocks.increasing}
-          decreasingStocks={mockStocks.decreasing}
-        />
-        <DividendSection
-          stocks={mockStocks.dividend}
-        />
-        <SectionDivider />
-        <ExchangeRateSection />
-        <DisclaimerSection />
-      </main>
-      <ErrorDialog />
-    </div>
+    <PageContainer title="홈">
+      <BannerSection />
+      <SectionDivider />
+      <RankingSection
+        increasingStocks={mockStocks.increasing}
+        decreasingStocks={mockStocks.decreasing}
+      />
+      <DividendSection
+        stocks={mockStocks.dividend}
+      />
+      <SectionDivider />
+      <ExchangeRateSection />
+      <DisclaimerSection />
+    </PageContainer>
   );
 }
