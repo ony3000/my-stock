@@ -30,7 +30,7 @@ export default function Search() {
     <PageContainer className="pt-15" title="검색">
       <section className="fixed z-50 top-0 w-full max-w-screen-sm h-15 bg-white">
         <h2 className="sr-only">검색어 입력</h2>
-        <ContentWrapper className="flex items-center h-full">
+        <ContentWrapper className="flex items-center h-full border-y border-solid border-t-transparent border-b-blue-400">
           <SearchIcon className="relative shrink-0 w-5 h-5 -mr-6.25 ml-1.25 text-gray-700 pointer-events-none" />
           <input
             ref={inputRef}
