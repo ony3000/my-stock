@@ -64,14 +64,22 @@ export default function Search() {
         </ContentWrapper>
       </section>
       {inputValue ? (
-        <section>
+        <section className="bg-white">
           <h2 className="sr-only">검색 결과</h2>
           {filteredStocks.length ? (
             <StockList items={filteredStocks} />
           ) : (
-            <ContentWrapper>
-              <div>검색결과 없음</div>
-            </ContentWrapper>
+            <div className="flex justify-center items-center h-[calc(100vh-7.5rem)]">
+              <div className="text-center">
+                <SearchIcon className="w-15 h-15 mx-auto text-gray-300 pointer-events-none" />
+                <div className="mt-3 text-xl">정보를 찾을 수 없네요.</div>
+                <div className="mt-2 text-gray-500 text-sm">
+                  주식명이나 종목코드를
+                  <br />
+                  다시 확인해 보세요.
+                </div>
+              </div>
+            </div>
           )}
         </section>
       ) : (
