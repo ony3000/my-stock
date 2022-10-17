@@ -10,7 +10,7 @@ export default function PageContainer({
 }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={classNames('container max-w-screen-sm min-h-screen pb-15 bg-gray-100', className)}
+      className={classNames('container max-w-screen-sm min-h-screen', className)}
       {...otherProps}
     >
       <h1 className="sr-only">{title}</h1>

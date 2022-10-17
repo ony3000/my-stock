@@ -77,7 +77,7 @@ export default function Home() {
   }>();
 
   return (
-    <PageContainer title="홈">
+    <PageContainer className="pb-15 bg-gray-100" title="홈">
       <BannerSection />
       <SectionDivider />
       <RankingSection
