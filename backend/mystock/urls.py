@@ -23,10 +23,12 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 from mystock.market.views import StockViewSet
+from mystock.dependent.views import BulkViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r"stocks", StockViewSet)
+router.register(r"bulk", BulkViewSet, basename="bulk")
 
 urlpatterns = [
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
