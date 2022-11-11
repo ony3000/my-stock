@@ -23,11 +23,13 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 from mystock.market.views import StockViewSet
+from mystock.mock.views import ProfileViewSet
 from mystock.dependent.views import BulkViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r"stocks", StockViewSet)
+router.register(r"profiles", ProfileViewSet)
 router.register(r"bulk", BulkViewSet, basename="bulk")
 
 urlpatterns = [
