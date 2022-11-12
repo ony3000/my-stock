@@ -1172,6 +1172,11 @@
   dependencies:
     json-parse-even-better-errors "^2.3.1"
 
+"@ony3000/base64-converter@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@ony3000/base64-converter/-/base64-converter-1.2.0.tgz#33aaae8a8a977bf6f2337ceafc148d4360092129"
+  integrity sha512-Aw8t/wq4sxkGxVTJFJVJwbLtVxMRt7DkMqRTGd1VsKMMkhBxbmpjBN+6lEqZt5r1yUCmXrl+FE1FcwFa/JNUag==
+
 "@remix-run/dev@^1.6.8":
   version "1.6.8"
   resolved "https://registry.yarnpkg.com/@remix-run/dev/-/dev-1.6.8.tgz#3c5cd41cefd98f2abd216a7377818d3bd3f34c19"
