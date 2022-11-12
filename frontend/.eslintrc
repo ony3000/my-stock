@@ -10,6 +10,9 @@
   },
   "rules": {
     "@typescript-eslint/brace-style": [2, "stroustrup"],
-    "import/no-unresolved": 2
+    "import/no-unresolved": 2,
+    "react/require-default-props": [2, {
+      "functions": "defaultArguments"
+    }]
   }
 }
