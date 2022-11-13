@@ -1,6 +1,7 @@
 import { ErrorDialog } from '~/components';
 import {
   Conditional200Button,
+  Conditional204Button,
   Handled400Button,
   Handled403Button,
   Ordinary200Button,
@@ -36,6 +37,10 @@ export default function Playground() {
           <Conditional200Button />
           <Handled403Button />
           <Handled400Button />
+        </div>
+        <div>
+          <h2>DELETE method</h2>
+          <Conditional204Button />
         </div>
       </main>
       <ErrorDialog />
