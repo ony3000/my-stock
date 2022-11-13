@@ -14,7 +14,7 @@ export default function BaseButton({
   return (
     <button
       type="button"
-      className={classNames('inline-flex justify-center items-center h-10 m-4 px-4 rounded-xl text-white', className)}
+      className={classNames('inline-flex justify-center items-center h-10 m-4 px-4 rounded-xl text-white leading-tight', className)}
       onClick={onClick}
       {...otherProps}
     >
