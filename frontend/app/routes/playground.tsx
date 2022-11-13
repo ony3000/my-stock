@@ -5,6 +5,7 @@ import {
   Unhandled400Button,
   Unhandled403Button,
   Unhandled404Button,
+  Unhandled405Button,
 } from '~/components/playground';
 
 export default function Playground() {
@@ -18,6 +19,9 @@ export default function Playground() {
         <Ordinary201Button />
         <Unhandled403Button />
         <Unhandled400Button />
+      </div>
+      <div>
+        <Unhandled405Button />
       </div>
     </PageContainer>
   );

@@ -4,3 +4,4 @@ export { default as Ordinary201Button } from './ordinary-201-button';
 export { default as Unhandled400Button } from './unhandled-400-button';
 export { default as Unhandled403Button } from './unhandled-403-button';
 export { default as Unhandled404Button } from './unhandled-404-button';
+export { default as Unhandled405Button } from './unhandled-405-button';

@@ -50,6 +50,12 @@ export const typedPost = async <T = unknown>(...params: Parameters<typeof axios.
   return Promise.resolve(typedResult);
 };
 
+export const typedPut = async <T = unknown>(...params: Parameters<typeof axios.put>) => {
+  const typedResult = await instance.put<T>(...params) as RefinedResponse<T> | RefinedError;
+
+  return Promise.resolve(typedResult);
+};
+
 export const typedPatch = async <T = unknown>(...params: Parameters<typeof axios.patch>) => {
   const typedResult = await instance.patch<T>(...params) as RefinedResponse<T> | RefinedError;
 
