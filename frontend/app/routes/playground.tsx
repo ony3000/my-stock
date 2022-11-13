@@ -1,5 +1,8 @@
 import { ErrorDialog } from '~/components';
 import {
+  Conditional200Button,
+  Handled400Button,
+  Handled403Button,
   Ordinary200Button,
   Ordinary201Button,
   Unhandled400Button,
@@ -27,6 +30,12 @@ export default function Playground() {
         <div>
           <h2>PUT method</h2>
           <Unhandled405Button />
+        </div>
+        <div>
+          <h2>PATCH method</h2>
+          <Conditional200Button />
+          <Handled403Button />
+          <Handled400Button />
         </div>
       </main>
       <ErrorDialog />
