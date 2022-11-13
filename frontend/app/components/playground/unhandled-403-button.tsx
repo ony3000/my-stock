@@ -23,7 +23,7 @@ export default function Unhandled403Button() {
   return (
     <BaseButton
       className="bg-red-400"
-      textContent="No auth (403 Forbidden)"
+      textContent="Empty or invalid auth (403 Forbidden)"
       onClick={apiRequest}
     />
   );
