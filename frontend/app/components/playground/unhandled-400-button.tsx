@@ -17,7 +17,7 @@ export default function Unhandled400Button() {
   return (
     <BaseButton
       className="bg-red-400"
-      textContent="Validation error (400 Bad Request)"
+      textContent="Create random profile w/o valid data (400)"
       onClick={apiRequest}
     />
   );

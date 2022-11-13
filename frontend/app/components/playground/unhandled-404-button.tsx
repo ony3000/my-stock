@@ -12,7 +12,7 @@ export default function Unhandled404Button() {
   return (
     <BaseButton
       className="bg-red-400"
-      textContent="Get profile (404 Not Found)"
+      textContent="Get a non-existent profile (404)"
       onClick={apiRequest}
     />
   );

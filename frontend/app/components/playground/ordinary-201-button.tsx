@@ -28,7 +28,7 @@ export default function Ordinary201Button() {
   return (
     <BaseButton
       className="bg-blue-400"
-      textContent="Create random profile (201 Created)"
+      textContent="Create random profile (201)"
       onClick={apiRequest}
     />
   );

@@ -28,7 +28,7 @@ export default function Conditional200Button() {
   return (
     <BaseButton
       className="bg-violet-400"
-      textContent="Update first profile (200 or 404)"
+      textContent="Update first profile (200 or manually-raised-404)"
       onClick={apiRequest}
     />
   );

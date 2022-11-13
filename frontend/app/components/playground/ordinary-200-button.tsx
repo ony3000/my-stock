@@ -12,7 +12,7 @@ export default function Ordinary200Button() {
   return (
     <BaseButton
       className="bg-blue-400"
-      textContent="Get profile list (200 OK)"
+      textContent="Get profile list (200)"
       onClick={apiRequest}
     />
   );

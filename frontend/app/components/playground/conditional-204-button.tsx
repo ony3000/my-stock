@@ -16,7 +16,7 @@ export default function Conditional204Button() {
   return (
     <BaseButton
       className="bg-violet-400"
-      textContent="Delete last profile (204 or 404)"
+      textContent="Delete last profile (204 or manually-raised-404)"
       onClick={apiRequest}
     />
   );

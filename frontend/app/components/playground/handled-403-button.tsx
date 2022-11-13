@@ -23,7 +23,7 @@ export default function Handled403Button() {
   return (
     <BaseButton
       className="bg-red-400"
-      textContent="Empty or invalid auth (403 Forbidden)"
+      textContent="Update first profile w/o valid auth (manually-raised-403)"
       onClick={apiRequest}
     />
   );

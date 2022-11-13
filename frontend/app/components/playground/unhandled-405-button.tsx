@@ -17,7 +17,7 @@ export default function Unhandled405Button() {
   return (
     <BaseButton
       className="bg-red-400"
-      textContent="(405 Method Not Allowed)"
+      textContent="Update profile in an unsupported method (405)"
       onClick={apiRequest}
     />
   );

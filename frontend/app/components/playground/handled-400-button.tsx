@@ -21,7 +21,7 @@ export default function Handled400Button() {
   return (
     <BaseButton
       className="bg-red-400"
-      textContent="Validation error (400 Bad Request)"
+      textContent="Update first profile w/o valid data (manually-raised-400)"
       onClick={apiRequest}
     />
   );
