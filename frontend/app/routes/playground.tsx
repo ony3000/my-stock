@@ -1,4 +1,4 @@
-import { PageContainer } from '~/layouts';
+import { ErrorDialog } from '~/components';
 import {
   Ordinary200Button,
   Ordinary201Button,
@@ -10,19 +10,26 @@ import {
 
 export default function Playground() {
   return (
-    <PageContainer className="pb-15 bg-gray-100" title="놀이터">
-      <div>
-        <Ordinary200Button />
-        <Unhandled404Button />
-      </div>
-      <div>
-        <Ordinary201Button />
-        <Unhandled403Button />
-        <Unhandled400Button />
-      </div>
-      <div>
-        <Unhandled405Button />
-      </div>
-    </PageContainer>
+    <div className="container min-h-screen bg-gray-100">
+      <h1 className="sr-only">놀이터</h1>
+      <main>
+        <div>
+          <h2>GET method</h2>
+          <Ordinary200Button />
+          <Unhandled404Button />
+        </div>
+        <div>
+          <h2>POST method</h2>
+          <Ordinary201Button />
+          <Unhandled403Button />
+          <Unhandled400Button />
+        </div>
+        <div>
+          <h2>PUT method</h2>
+          <Unhandled405Button />
+        </div>
+      </main>
+      <ErrorDialog />
+    </div>
   );
 }
