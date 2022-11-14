@@ -1,3 +1,4 @@
+from time import sleep
 from django.forms.models import model_to_dict
 from drf_spectacular.utils import extend_schema
 from mystock.mock.models import Profile
@@ -82,3 +83,31 @@ class ProfileViewSet(viewsets.ModelViewSet):
         last_profile.delete()
 
         return Response(status=204)
+
+    @extend_schema(
+        description="id 값이 일치하는 프로필을 5초 후에 반환",
+        responses={200: ProfileSerializer()},
+    )
+    @action(detail=True, methods=["get"])
+    def delayed(self, request: Request, pk: str) -> Response:
+        profile = Profile.objects.filter(id=int(pk)).first()
+
+        sleep(5)
+
+        serializer = ProfileSerializer(profile)
+        return Response(serializer.data)
+
+    @extend_schema(
+        description="id 값이 일치하는 프로필을 소문자로 반환",
+        responses={200: ProfileSerializer()},
+    )
+    @action(detail=True, methods=["get"])
+    def lowercase(self, request: Request, pk: str) -> Response:
+        profile = Profile.objects.filter(id=int(pk)).first()
+
+        profile.name = profile.name.lower()  # type: ignore
+        profile.phone = profile.phone.lower()  # type: ignore
+        profile.email = profile.email.lower()  # type: ignore
+
+        serializer = ProfileSerializer(profile)
+        return Response(serializer.data)
