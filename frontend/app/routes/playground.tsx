@@ -6,10 +6,12 @@ import {
   Handled403Button,
   Ordinary200Button,
   Ordinary201Button,
+  Unhandled000Button,
   Unhandled400Button,
   Unhandled403Button,
   Unhandled404Button,
   Unhandled405Button,
+  Unhandled500Button,
 } from '~/components/playground';
 
 export default function Playground() {
@@ -21,6 +23,8 @@ export default function Playground() {
           <h2>GET method</h2>
           <Ordinary200Button />
           <Unhandled404Button />
+          <Unhandled000Button />
+          <Unhandled500Button />
         </div>
         <div>
           <h2>POST method</h2>
