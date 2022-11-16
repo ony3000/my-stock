@@ -1,3 +1,5 @@
+import type { Dict } from '~/types/common';
+
 export type ListApiResponse<T = unknown> = {
   count: number;
   next: string | null;
@@ -11,15 +13,7 @@ export type ManuallyRaisedExceptionData = {
   message: string;
 };
 
-export type ErrorResponseData = string | ManuallyRaisedExceptionData | undefined;
-
-export type ErrorInformation = {
-  code: string;
-  config: object;
-  message: string;
-  name: string;
-  status: number | null;
-};
+export type ErrorResponseData = string | Dict | undefined;
 
 export type RefinedResponse<T = unknown> = {
   status: number;

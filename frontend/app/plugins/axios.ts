@@ -1,8 +1,7 @@
 import type { AxiosResponse, AxiosError } from 'axios';
 import axios from 'axios';
-import type {
-  ErrorResponseData, ErrorInformation, RefinedResponse, RefinedError,
-} from '~/types/apis';
+import type { ErrorResponseData, RefinedResponse, RefinedError } from '~/types/apis';
+import { isManuallyRaisedExceptionData } from '~/utils/type-guard';
 
 const instance = axios.create({
   baseURL: 'http://localhost:8000/api/v1/',
@@ -20,19 +19,24 @@ instance.interceptors.response.use(
     // eslint-disable-next-line no-console
     console.error(error);
 
-    const errorInfo = error.toJSON() as ErrorInformation;
-    const refinedError: RefinedError = error.response ? {
-      status: error.response.status,
+    const refinedError: RefinedError = {
+      status: error.request.status,
       code: error.code || 'ERR_UNKNOWN',
-      title: error.response.statusText || error.name,
+      title: error.name,
       message: error.message,
-      ...(typeof error.response.data === 'object' ? error.response.data : {}),
-    } : {
-      status: Number(errorInfo.status),
-      code: errorInfo.code,
-      title: errorInfo.name,
-      message: errorInfo.message,
     };
+
+    if (error.response && error.response !== error.request) {
+      refinedError.title = error.response.statusText;
+
+      const errorResponseData = error.response.data;
+
+      if (isManuallyRaisedExceptionData(errorResponseData)) {
+        refinedError.code = errorResponseData.code;
+        refinedError.title = errorResponseData.title;
+        refinedError.message = errorResponseData.message;
+      }
+    }
 
     return refinedError;
   },
