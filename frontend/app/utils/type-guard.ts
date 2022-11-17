@@ -17,7 +17,7 @@ export const isManuallyRaisedExceptionData = (
 
 export const isApiError = (
   arg: RefinedResponse | RefinedError,
-): arg is RefinedError => arg.status !== 200;
+): arg is RefinedError => (arg.status < 100 || arg.status >= 400);
 
 export const isDecimalPatternString = (
   arg: string,
