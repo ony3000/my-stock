@@ -66,8 +66,8 @@ export const typedPatch = async <T = unknown>(...params: Parameters<typeof axios
   return Promise.resolve(typedResult);
 };
 
-export const typedDelete = async <T = unknown>(...params: Parameters<typeof axios.delete>) => {
-  const typedResult = await instance.delete<T>(...params) as RefinedResponse<T> | RefinedError;
+export const typedDelete = async (...params: Parameters<typeof axios.delete>) => {
+  const typedResult = await instance.delete(...params) as RefinedResponse<''> | RefinedError;
 
   return Promise.resolve(typedResult);
 };
