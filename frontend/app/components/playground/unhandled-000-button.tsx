@@ -1,14 +1,24 @@
+import { useSetRecoilState } from 'recoil';
 import type { Profile } from '~/types/mocks';
 import { typedGet } from '~/plugins/axios';
+import { errorState } from '~/store/atoms';
+import { isApiError } from '~/utils/type-guard';
 import BaseButton from './base-button';
 
 export default function Unhandled000Button() {
+  const setError = useSetRecoilState(errorState);
+
   const apiRequest = async () => {
     const response = await typedGet<Profile>('profiles/0/delayed/', {
       timeout: 3000,
     });
 
-    console.log(response);
+    if (isApiError(response)) {
+      setError(response);
+    }
+    else {
+      console.log(response);
+    }
   };
 
   return (

@@ -1,10 +1,15 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { faker } from '@faker-js/faker/locale/en';
+import { useSetRecoilState } from 'recoil';
 import type { Profile } from '~/types/mocks';
 import { typedPost } from '~/plugins/axios';
+import { errorState } from '~/store/atoms';
+import { isApiError } from '~/utils/type-guard';
 import BaseButton from './base-button';
 
 export default function Unhandled403Button() {
+  const setError = useSetRecoilState(errorState);
+
   const apiRequest = async () => {
     const randomFirstName = faker.name.firstName();
     const randomLastName = faker.name.lastName();
@@ -17,7 +22,12 @@ export default function Unhandled403Button() {
       email: randomEmail,
     }, {});
 
-    console.log(response);
+    if (isApiError(response)) {
+      setError(response);
+    }
+    else {
+      console.log(response);
+    }
   };
 
   return (
