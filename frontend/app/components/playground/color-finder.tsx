@@ -128,7 +128,7 @@ export default function ColorFinder() {
         />
       </form>
       {enteredHexColor && (
-        <p className="mb-4">
+        <p>
           입력한 색상
           {' '}
           <span className="whitespace-nowrap">{enteredHexColor}</span>

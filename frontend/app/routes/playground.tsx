@@ -24,6 +24,7 @@ export default function Playground() {
           <h2>Color Finder</h2>
           <ColorFinder />
         </div>
+        <hr className="my-4" />
         <div>
           <h2>GET method</h2>
           <Ordinary200Button />
