@@ -33,6 +33,7 @@ ALLOWED_HOSTS: list[str] = []
 
 INSTALLED_APPS = [
     "mystock.market.apps.MarketConfig",
+    "mystock.mock.apps.MockConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
