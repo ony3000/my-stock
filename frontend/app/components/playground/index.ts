@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export { default as ColorFinder } from './color-finder';
 export { default as Conditional200Button } from './conditional-200-button';
 export { default as Conditional204Button } from './conditional-204-button';

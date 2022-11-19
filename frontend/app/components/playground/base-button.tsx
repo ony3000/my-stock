@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import classNames from 'classnames';
 
 type BaseButtonProps = React.ComponentProps<'button'> & {

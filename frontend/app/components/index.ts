@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export { default as BannerSection } from './banner-section';
 export { default as DisclaimerSection } from './disclaimer-section';
 export { default as DividendSection } from './dividend-section';

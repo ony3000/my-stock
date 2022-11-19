@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import type { Dict, DecimalPatternString } from '~/types/common';
 import type { ManuallyRaisedExceptionData, RefinedResponse, RefinedError } from '~/types/apis';
 
