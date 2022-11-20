@@ -56,11 +56,11 @@ export default function ColorFinder() {
     register, handleSubmit, formState: { errors },
   } = useForm<ColorFinderFormFields>();
 
-  const onSubmit: SubmitHandler<ColorFinderFormFields> = (data) => {
+  const onSubmit: SubmitHandler<ColorFinderFormFields> = (formData) => {
     const enteredRgbColor: RgbDict = {
-      R: Number.parseInt(data.hexColor.slice(0, 2), 16),
-      G: Number.parseInt(data.hexColor.slice(2, 4), 16),
-      B: Number.parseInt(data.hexColor.slice(4), 16),
+      R: Number.parseInt(formData.hexColor.slice(0, 2), 16),
+      G: Number.parseInt(formData.hexColor.slice(2, 4), 16),
+      B: Number.parseInt(formData.hexColor.slice(4), 16),
     };
 
     let minDistance = Infinity;
@@ -68,7 +68,7 @@ export default function ColorFinder() {
     let closestClassNameSuffix = '';
 
     Object.entries(flattenRgbColors).forEach(([classNameSuffix, rgbColor]) => {
-      if (classNameSuffix === 'black' || classNameSuffix === 'white' || data.colorName.includes(classNameSuffix.split('-')[0])) {
+      if (classNameSuffix === 'black' || classNameSuffix === 'white' || formData.colorName.includes(classNameSuffix.split('-')[0])) {
         const distanceAs3dCoordinate = Math.sqrt(
           (enteredRgbColor.R - rgbColor.R) ** 2
             + (enteredRgbColor.G - rgbColor.G) ** 2
@@ -83,7 +83,7 @@ export default function ColorFinder() {
       }
     });
 
-    setEnteredHexColor(data.hexColor);
+    setEnteredHexColor(formData.hexColor);
     setClosestHexColor([
       closestRgbColor.R.toString(16).padStart(2, '0'),
       closestRgbColor.G.toString(16).padStart(2, '0'),
