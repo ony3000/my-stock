@@ -24,6 +24,7 @@ export default function Handled400Button() {
       setError(response);
     }
     else {
+      // eslint-disable-next-line no-console
       console.log(response);
     }
   };

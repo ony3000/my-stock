@@ -1,5 +1,6 @@
 import { ErrorDialog } from '~/components';
 import {
+  ColorFinder,
   Conditional200Button,
   Conditional204Button,
   Handled400Button,
@@ -19,6 +20,11 @@ export default function Playground() {
     <div className="container min-h-screen bg-gray-100">
       <h1 className="sr-only">놀이터</h1>
       <main>
+        <div>
+          <h2>Color Finder</h2>
+          <ColorFinder />
+        </div>
+        <hr className="my-4" />
         <div>
           <h2>GET method</h2>
           <Ordinary200Button />

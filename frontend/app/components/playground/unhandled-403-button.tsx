@@ -26,6 +26,7 @@ export default function Unhandled403Button() {
       setError(response);
     }
     else {
+      // eslint-disable-next-line no-console
       console.log(response);
     }
   };

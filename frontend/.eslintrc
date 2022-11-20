@@ -11,6 +11,7 @@
   "rules": {
     "@typescript-eslint/brace-style": [2, "stroustrup"],
     "import/no-unresolved": 2,
+    "react/jsx-props-no-spreading": 0,
     "react/require-default-props": [2, {
       "functions": "defaultArguments"
     }]
