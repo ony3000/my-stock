@@ -2,7 +2,6 @@ import type { LoaderFunction } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import invariant from 'tiny-invariant';
-import type { DecimalPatternString } from '~/types/common';
 import type { ListApiResponse } from '~/types/apis';
 import type { MockStock } from '~/types/mocks';
 import type { Stock } from '~/types/models';
