@@ -15,11 +15,11 @@ export type ManuallyRaisedExceptionData = {
 
 export type ErrorResponseData = string | Dict | undefined;
 
-export type RefinedResponse<T = unknown> = {
+export type UniformResponse<T = unknown> = {
   status: number;
   data: T;
 };
 
-export type RefinedError = ManuallyRaisedExceptionData & {
+export type UniformError = ManuallyRaisedExceptionData & {
   status: number;
 };

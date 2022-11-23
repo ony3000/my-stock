@@ -1,5 +1,5 @@
 import type { Dict, DecimalPatternString } from '~/types/common';
-import type { ManuallyRaisedExceptionData, RefinedResponse, RefinedError } from '~/types/apis';
+import type { ManuallyRaisedExceptionData, UniformResponse, UniformError } from '~/types/apis';
 
 export const isDict = (arg: unknown): arg is Dict => (
   arg !== undefined && arg !== null && Object.getPrototypeOf(arg) === Object.prototype
@@ -15,8 +15,8 @@ export const isManuallyRaisedExceptionData = (
 );
 
 export const isApiError = (
-  arg: RefinedResponse | RefinedError,
-): arg is RefinedError => (arg.status < 100 || arg.status >= 400);
+  arg: UniformResponse | UniformError,
+): arg is UniformError => (arg.status < 100 || arg.status >= 400);
 
 export const isDecimalPatternString = (
   arg: string,
