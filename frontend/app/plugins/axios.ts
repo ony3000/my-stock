@@ -1,7 +1,9 @@
 import type { AxiosResponse, AxiosError } from 'axios';
 import axios from 'axios';
-import type { ErrorResponseData, UniformResponse, UniformError } from '~/types/apis';
-import { isManuallyRaisedExceptionData } from '~/utils/type-guard';
+import type {
+  ErrorResponseData, UniformResponse, UniformError, ApiErrorTuple, ApiResponseTuple,
+} from '~/types/apis';
+import { isManuallyRaisedExceptionData, isApiError } from '~/utils/type-guard';
 
 const instance = axios.create({
   baseURL: 'http://localhost:8000/api/v1/',
@@ -42,32 +44,42 @@ instance.interceptors.response.use(
   },
 );
 
-export const typedGet = async <T = unknown>(...params: Parameters<typeof axios.get>) => {
+export const typedGet = async <T = unknown>(
+  ...params: Parameters<typeof axios.get>
+): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.get<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(typedResult);
+  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
-export const typedPost = async <T = unknown>(...params: Parameters<typeof axios.post>) => {
+export const typedPost = async <T = unknown>(
+  ...params: Parameters<typeof axios.post>
+): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.post<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(typedResult);
+  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
-export const typedPut = async <T = unknown>(...params: Parameters<typeof axios.put>) => {
+export const typedPut = async <T = unknown>(
+  ...params: Parameters<typeof axios.put>
+): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.put<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(typedResult);
+  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
-export const typedPatch = async <T = unknown>(...params: Parameters<typeof axios.patch>) => {
+export const typedPatch = async <T = unknown>(
+  ...params: Parameters<typeof axios.patch>
+): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.patch<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(typedResult);
+  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
-export const typedDelete = async (...params: Parameters<typeof axios.delete>) => {
+export const typedDelete = async (
+  ...params: Parameters<typeof axios.delete>
+): Promise<ApiErrorTuple | ApiResponseTuple<''>> => {
   const typedResult = await instance.delete(...params) as UniformResponse<''> | UniformError;
 
-  return Promise.resolve(typedResult);
+  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };

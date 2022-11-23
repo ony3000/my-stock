@@ -5,7 +5,6 @@ import { base64Encode } from '@ony3000/base64-converter';
 import type { Profile } from '~/types/mocks';
 import { typedPost } from '~/plugins/axios';
 import { errorState } from '~/store/atoms';
-import { isApiError } from '~/utils/type-guard';
 import BaseButton from './base-button';
 
 export default function Ordinary201Button() {
@@ -17,7 +16,7 @@ export default function Ordinary201Button() {
     const randomPhoneNumber = faker.phone.number();
     const randomEmail = faker.internet.email(randomFirstName, randomLastName);
 
-    const response = await typedPost<Profile>('profiles/', {
+    const [error, response] = await typedPost<Profile>('profiles/', {
       name: `${randomFirstName} ${randomLastName}`,
       phone: randomPhoneNumber,
       email: randomEmail,
@@ -27,8 +26,8 @@ export default function Ordinary201Button() {
       },
     });
 
-    if (isApiError(response)) {
-      setError(response);
+    if (error) {
+      setError(error);
     }
     else {
       // eslint-disable-next-line no-console

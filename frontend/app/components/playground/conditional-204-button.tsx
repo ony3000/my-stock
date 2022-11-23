@@ -2,21 +2,20 @@ import { useSetRecoilState } from 'recoil';
 import { base64Encode } from '@ony3000/base64-converter';
 import { typedDelete } from '~/plugins/axios';
 import { errorState } from '~/store/atoms';
-import { isApiError } from '~/utils/type-guard';
 import BaseButton from './base-button';
 
 export default function Conditional204Button() {
   const setError = useSetRecoilState(errorState);
 
   const apiRequest = async () => {
-    const response = await typedDelete('profiles/last-one/', {
+    const [error, response] = await typedDelete('profiles/last-one/', {
       headers: {
         Authorization: `Basic ${base64Encode('admin:fhzjfdjemals')}`,
       },
     });
 
-    if (isApiError(response)) {
-      setError(response);
+    if (error) {
+      setError(error);
     }
     else {
       // eslint-disable-next-line no-console

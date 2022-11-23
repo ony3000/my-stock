@@ -23,3 +23,7 @@ export type UniformResponse<T = unknown> = {
 export type UniformError = ManuallyRaisedExceptionData & {
   status: number;
 };
+
+export type ApiErrorTuple = [UniformError, null];
+
+export type ApiResponseTuple<T = unknown> = [null, UniformResponse<T>];

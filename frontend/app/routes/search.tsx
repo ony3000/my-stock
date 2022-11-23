@@ -9,12 +9,11 @@ import type { SearchableStock } from '~/types/models';
 import { typedGet } from '~/plugins/axios';
 import { PageContainer, ContentWrapper } from '~/layouts';
 import { StockList } from '~/components/search';
-import { isApiError } from '~/utils/type-guard';
 
 export const loader: LoaderFunction = async () => {
-  const response = await typedGet<SearchableStock[]>('bulk/searchable-stocks/');
+  const [error, response] = await typedGet<SearchableStock[]>('bulk/searchable-stocks/');
 
-  invariant(!isApiError(response));
+  invariant(error === null);
 
   const searchableStocks = response.data.map<SearchableStock>(({ keywords, ...otherProps }) => ({
     keywords: keywords.map((keyword) => keyword.toLowerCase()),

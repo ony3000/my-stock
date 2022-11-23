@@ -16,7 +16,7 @@ import {
   RankingSection,
   SectionDivider,
 } from '~/components';
-import { isApiError, isDecimalPatternString } from '~/utils/type-guard';
+import { isDecimalPatternString } from '~/utils/type-guard';
 
 const injectMockProps = (stock: Stock): MockStock => {
   const randomRate = ((Math.random() * 1000 + 1) / 100).toFixed(2);
@@ -36,22 +36,24 @@ const injectMockProps = (stock: Stock): MockStock => {
 
 export const loader: LoaderFunction = async () => {
   const [
-    increasingStocksResponse,
-    decreasingStocksResponse,
-    stocksResponse,
-  ] = await Promise.all([
-    typedGet<ListApiResponse<Stock>>('stocks/increasing/'),
-    typedGet<ListApiResponse<Stock>>('stocks/decreasing/'),
-    typedGet<ListApiResponse<Stock>>('stocks/'),
-  ]);
+    increasingStocksApiError, increasingStocksApiResponse,
+  ] = await typedGet<ListApiResponse<Stock>>('stocks/increasing/');
+  const [
+    decreasingStocksApiError, decreasingStocksApiResponse,
+  ] = await typedGet<ListApiResponse<Stock>>('stocks/decreasing/');
+  const [
+    stocksApiError, stocksApiResponse,
+  ] = await typedGet<ListApiResponse<Stock>>('stocks/');
 
-  invariant(!isApiError(increasingStocksResponse));
-  invariant(!isApiError(decreasingStocksResponse));
-  invariant(!isApiError(stocksResponse));
+  invariant(
+    increasingStocksApiError === null
+      && decreasingStocksApiError === null
+      && stocksApiError === null,
+  );
 
-  const increasingStocks = increasingStocksResponse.data.results;
-  const decreasingStocks = decreasingStocksResponse.data.results;
-  const stocks = stocksResponse.data.results;
+  const increasingStocks = increasingStocksApiResponse.data.results;
+  const decreasingStocks = decreasingStocksApiResponse.data.results;
+  const stocks = stocksApiResponse.data.results;
 
   const mockIncreasingStocks = increasingStocks.map<MockStock>(injectMockProps);
   const mockDecreasingStocks = decreasingStocks.map<MockStock>(injectMockProps);
