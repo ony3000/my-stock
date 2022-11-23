@@ -14,7 +14,7 @@ export const isManuallyRaisedExceptionData = (
     && typeof arg.message === 'string'
 );
 
-export const isApiError = (
+export const isUniformError = (
   arg: UniformResponse | UniformError,
 ): arg is UniformError => (arg.status < 100 || arg.status >= 400);
 

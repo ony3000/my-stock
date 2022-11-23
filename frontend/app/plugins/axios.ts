@@ -3,7 +3,7 @@ import axios from 'axios';
 import type {
   ErrorResponseData, UniformResponse, UniformError, ApiErrorTuple, ApiResponseTuple,
 } from '~/types/apis';
-import { isManuallyRaisedExceptionData, isApiError } from '~/utils/type-guard';
+import { isManuallyRaisedExceptionData, isUniformError } from '~/utils/type-guard';
 
 const instance = axios.create({
   baseURL: 'http://localhost:8000/api/v1/',
@@ -49,7 +49,7 @@ export const typedGet = async <T = unknown>(
 ): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.get<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
+  return Promise.resolve(isUniformError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
 export const typedPost = async <T = unknown>(
@@ -57,7 +57,7 @@ export const typedPost = async <T = unknown>(
 ): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.post<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
+  return Promise.resolve(isUniformError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
 export const typedPut = async <T = unknown>(
@@ -65,7 +65,7 @@ export const typedPut = async <T = unknown>(
 ): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.put<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
+  return Promise.resolve(isUniformError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
 export const typedPatch = async <T = unknown>(
@@ -73,7 +73,7 @@ export const typedPatch = async <T = unknown>(
 ): Promise<ApiErrorTuple | ApiResponseTuple<T>> => {
   const typedResult = await instance.patch<T>(...params) as UniformResponse<T> | UniformError;
 
-  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
+  return Promise.resolve(isUniformError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
 
 export const typedDelete = async (
@@ -81,5 +81,5 @@ export const typedDelete = async (
 ): Promise<ApiErrorTuple | ApiResponseTuple<''>> => {
   const typedResult = await instance.delete(...params) as UniformResponse<''> | UniformError;
 
-  return Promise.resolve(isApiError(typedResult) ? [typedResult, null] : [null, typedResult]);
+  return Promise.resolve(isUniformError(typedResult) ? [typedResult, null] : [null, typedResult]);
 };
