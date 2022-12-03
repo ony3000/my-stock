@@ -7,7 +7,7 @@ export default function ContentWrapper({
 }: React.ComponentProps<'div'>) {
   return (
     <div
-      className={classNames('px-5', 'iphone:px-6.25', className)}
+      className={classNames('px-5 iphone:px-6.25', className)}
       {...otherProps}
     >
       {children}

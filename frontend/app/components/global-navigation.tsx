@@ -49,7 +49,7 @@ export default function GlobalNavigation() {
             <Link to={href} className="inline-flex justify-center items-center w-full h-full">
               <span className="sr-only">{title}</span>
               <IconComponent
-                className={classNames('w-6', 'h-6', {
+                className={classNames('w-6 h-6', {
                   'text-blue-500': matchedPathnames.includes(href),
                 })}
               />
