@@ -2,7 +2,7 @@ import { QuestionMarkCircleIcon } from '@heroicons/react/outline';
 import invariant from 'tiny-invariant';
 import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 import type { MockStock } from '~/types/mocks';
-import { ContentWrapper } from '~/layouts';
+import { ContentWrapper } from '~/components/common';
 import { makeGravatarUrl } from '~/utils/gravatar';
 
 interface DividendSectionProps {

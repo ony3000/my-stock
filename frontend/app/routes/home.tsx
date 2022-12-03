@@ -6,7 +6,7 @@ import type { ListApiResponse } from '~/types/apis';
 import type { MockStock } from '~/types/mocks';
 import type { Stock } from '~/types/models';
 import { typedGet } from '~/plugins/axios';
-import { PageContainer } from '~/layouts';
+import { PageContainer } from '~/components/common';
 import {
   BannerSection,
   DisclaimerSection,

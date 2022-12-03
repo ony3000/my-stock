@@ -1,4 +1,4 @@
-import { ErrorDialog } from '~/components';
+import { ErrorDialog } from '~/components/common';
 import {
   ColorFinder,
   Conditional200Button,

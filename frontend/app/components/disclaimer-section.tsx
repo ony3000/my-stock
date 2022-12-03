@@ -1,7 +1,7 @@
 import {
   ArrowUpIcon,
 } from '@heroicons/react/outline';
-import { ContentWrapper } from '~/layouts';
+import { ContentWrapper } from '~/components/common';
 
 export default function DisclaimerSection() {
   return (
