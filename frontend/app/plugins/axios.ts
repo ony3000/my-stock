@@ -29,6 +29,7 @@ instance.interceptors.response.use(
     };
 
     if (error.response && error.response !== error.request) {
+      uniformError.status = error.response.status;
       uniformError.title = error.response.statusText;
 
       const errorResponseData = error.response.data;
