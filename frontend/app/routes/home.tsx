@@ -13,8 +13,8 @@ import {
   DividendSection,
   ExchangeRateSection,
   RankingSection,
-  SectionDivider,
-} from '~/components';
+} from '~/components/home';
+import { SectionDivider } from '~/components';
 import { isDecimalPatternString } from '~/utils/type-guard';
 
 const injectMockProps = (stock: Stock): MockStock => {
