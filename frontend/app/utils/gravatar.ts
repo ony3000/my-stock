@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import md5 from 'crypto-js/md5';
 
 export const makeGravatarUrl = (code: string): string => {
