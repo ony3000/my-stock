@@ -14,7 +14,6 @@ import {
   ExchangeRateSection,
   RankingSection,
 } from '~/components/home';
-import { SectionDivider } from '~/components';
 import { isDecimalPatternString } from '~/utils/type-guard';
 
 const injectMockProps = (stock: Stock): MockStock => {
@@ -79,18 +78,24 @@ export default function Home() {
 
   return (
     <PageContainer className="pb-15 bg-gray-100" title="홈">
-      <BannerSection />
-      <SectionDivider />
-      <RankingSection
-        increasingStocks={mockStocks.increasing}
-        decreasingStocks={mockStocks.decreasing}
-      />
-      <DividendSection
-        stocks={mockStocks.dividend}
-      />
-      <SectionDivider />
-      <ExchangeRateSection />
-      <DisclaimerSection />
+      <div className="space-y-3">
+        <div>
+          <BannerSection />
+        </div>
+        <div>
+          <RankingSection
+            increasingStocks={mockStocks.increasing}
+            decreasingStocks={mockStocks.decreasing}
+          />
+          <DividendSection
+            stocks={mockStocks.dividend}
+          />
+        </div>
+        <div>
+          <ExchangeRateSection />
+          <DisclaimerSection />
+        </div>
+      </div>
     </PageContainer>
   );
 }
