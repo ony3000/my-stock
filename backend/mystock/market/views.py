@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from drf_spectacular.utils import extend_schema
 from mystock.market.models import Stock
 from mystock.market.serializers import StockSerializer, SearchableStockSerializer
