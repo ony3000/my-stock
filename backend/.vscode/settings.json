@@ -2,5 +2,12 @@
   "editor.defaultFormatter": "ms-python.black-formatter",
   "editor.formatOnSave": true,
   "python.formatting.provider": "black",
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.diagnosticMode": "workspace",
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportImportCycles": "error",
+    "reportUnusedImport": "error",
+    "reportUnusedVariable": "error"
+  },
   "mypy.runUsingActiveInterpreter": true
 }
