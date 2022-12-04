@@ -1,5 +1,5 @@
 import { Link } from '@remix-run/react';
-import { ContentWrapper } from '~/layouts';
+import { ContentWrapper } from '~/components/common';
 
 export default function BannerSection() {
   return (

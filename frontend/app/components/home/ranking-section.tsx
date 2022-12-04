@@ -4,7 +4,7 @@ import type Swiper from 'swiper';
 import { Thumbs } from 'swiper';
 import { Swiper as ReactSwiper, SwiperSlide } from 'swiper/react';
 import type { MockStock } from '~/types/mocks';
-import { ContentWrapper } from '~/layouts';
+import { ContentWrapper } from '~/components/common';
 import { makeGravatarUrl } from '~/utils/gravatar';
 
 interface RankingSectionProps {

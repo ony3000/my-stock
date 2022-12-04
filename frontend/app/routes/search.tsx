@@ -7,7 +7,7 @@ import { useState, useRef } from 'react';
 import invariant from 'tiny-invariant';
 import type { SearchableStock } from '~/types/models';
 import { typedGet } from '~/plugins/axios';
-import { PageContainer, ContentWrapper } from '~/layouts';
+import { PageContainer, ContentWrapper } from '~/components/common';
 import { StockList } from '~/components/search';
 
 export const loader: LoaderFunction = async () => {

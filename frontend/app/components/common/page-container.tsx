@@ -1,5 +1,6 @@
 import classNames from 'classnames';
-import { ErrorDialog, GlobalNavigation } from '~/components';
+import ErrorDialog from './error-dialog';
+import GlobalNavigation from './global-navigation';
 
 export default function PageContainer({
   className,

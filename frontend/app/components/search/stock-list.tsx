@@ -1,5 +1,5 @@
 import type { SearchableStock } from '~/types/models';
-import { ContentWrapper } from '~/layouts';
+import { ContentWrapper } from '~/components/common';
 import { makeGravatarUrl } from '~/utils/gravatar';
 
 type StockListProps = {

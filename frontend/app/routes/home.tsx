@@ -6,15 +6,14 @@ import type { ListApiResponse } from '~/types/apis';
 import type { MockStock } from '~/types/mocks';
 import type { Stock } from '~/types/models';
 import { typedGet } from '~/plugins/axios';
-import { PageContainer } from '~/layouts';
+import { PageContainer } from '~/components/common';
 import {
   BannerSection,
   DisclaimerSection,
   DividendSection,
   ExchangeRateSection,
   RankingSection,
-  SectionDivider,
-} from '~/components';
+} from '~/components/home';
 import { isDecimalPatternString } from '~/utils/type-guard';
 
 const injectMockProps = (stock: Stock): MockStock => {
@@ -79,18 +78,24 @@ export default function Home() {
 
   return (
     <PageContainer className="pb-15 bg-gray-100" title="홈">
-      <BannerSection />
-      <SectionDivider />
-      <RankingSection
-        increasingStocks={mockStocks.increasing}
-        decreasingStocks={mockStocks.decreasing}
-      />
-      <DividendSection
-        stocks={mockStocks.dividend}
-      />
-      <SectionDivider />
-      <ExchangeRateSection />
-      <DisclaimerSection />
+      <div className="space-y-3">
+        <div>
+          <BannerSection />
+        </div>
+        <div>
+          <RankingSection
+            increasingStocks={mockStocks.increasing}
+            decreasingStocks={mockStocks.decreasing}
+          />
+          <DividendSection
+            stocks={mockStocks.dividend}
+          />
+        </div>
+        <div>
+          <ExchangeRateSection />
+          <DisclaimerSection />
+        </div>
+      </div>
     </PageContainer>
   );
 }

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { ContentWrapper } from '~/layouts';
+import { ContentWrapper } from '~/components/common';
 
 export default function ExchangeRateSection() {
   const month = 8;
