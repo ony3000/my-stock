@@ -31,6 +31,8 @@ classDiagram
     string 국문_주식명
     string 국문_주식명_초성
     string 영문_주식명
+    number 원화_주가
+    decimal 원화_주가_등락률
     number 배당수익률
     string 기업정보
     string 창업자
@@ -62,7 +64,8 @@ classDiagram
   주식 "1" <-- "N" 배당_내역
 
   class 테마 {
-    string 테마명
+    string 국문_테마명
+    string 국문_테마_설명
   }
 
   class unnamed_2 {
