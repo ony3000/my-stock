@@ -1,0 +1,203 @@
+- model: market.theme
+  pk: 1
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 반도체
+    kr_explanation: 컴퓨터, 스마트폰 등 주요 스마트 기기의 두뇌인 반도체를 생산하는 기업
+- model: market.theme
+  pk: 2
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 손쉬운 결제
+    kr_explanation: 언제 어디서나 현금 및 카드를 사용할 수 있게 해주는 결제 인프라를 제공함으로써, 사람들이 돈을 쓸 때마다 돈을 버는 기업
+- model: market.theme
+  pk: 3
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 프랜차이즈
+    kr_explanation: 누구나 한 번쯤은 먹어본 햄버거, 피자, 치킨, 커피 프랜차이즈
+- model: market.theme
+  pk: 4
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 인공지능(AI)
+    kr_explanation: 기계가 학습을 통해 인간의 지능을 모방하는 인공지능(Artificial Intelligence) 연구에 매진하는 기업
+- model: market.theme
+  pk: 5
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 항공우주&방위산업
+    kr_explanation: 민간용 비행기부터 인공위성, 로켓, 전투기, 미사일, 탱크 등을 생산하는 기업
+- model: market.theme
+  pk: 6
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 클라우드
+    kr_explanation: 개인도 비즈니스도 이제 클라우드를 통해 서버, 스토리지뿐만 아니라, 다양한 어플리케이션의 활용이 가능해진 시대. 각자의 필요에 따라 원하는 자원을 필요한 만큼 빌려 쓸 수 있게 해주는 클라우드 서비스 기업
+- model: market.theme
+  pk: 7
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 소재/원자재
+    kr_explanation: 무엇인가를 만들어 내려면 원재료가 필요하죠. 공업 생산의 원료가 되는 화학제품, 금속, 철강 등을 생산하는 기업
+- model: market.theme
+  pk: 8
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 카리스마 창업자
+    kr_explanation: 마크 저커버그, 제프 베조스, 일론 머스크 등 이름만 들으면 알만한 그들이 설립한 기업
+- model: market.theme
+  pk: 9
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 블록체인
+    kr_explanation: 데이터를 한곳에 집중해서 저장하는 것이 아니라, 수많은 컴퓨터에 분산 저장하여, 더 안전하고 투명한 거래가 가능하게 하는 기업
+- model: market.theme
+  pk: 10
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 리테일/유통
+    kr_explanation: 일상생활에 필요한 생활용품, 식품부터 전자제품, 주택 자재까지 구매할 수 있는 마트 및 전문 유통기업
+- model: market.theme
+  pk: 11
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 건물주의 꿈
+    kr_explanation: 미국 부동산에 투자하고 싶으신 분~ 쇼핑몰, 물류센터, 호텔, 아파트 등을 보유, 운영하는 부동산투자회사(REIT, 리츠)
+- model: market.theme
+  pk: 12
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 무병장수의 꿈
+    kr_explanation: 두통부터 심장질환, 암까지 각종 질병/질환에 필요한 의약품을 연구, 개발하는 기업
+- model: market.theme
+  pk: 13
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 어디 옷이야?
+    kr_explanation: 캐주얼부터 프리미엄 정장까지 대표 의류 브랜드
+- model: market.theme
+  pk: 14
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 언택트 경제
+    kr_explanation: 비대면, 비접촉의 시대. 집에만 있어도 쇼핑, 영화, 음악, 음식, 운동까지 즐길 수 있도록 해주는 기업
+- model: market.theme
+  pk: 15
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 자율주행차
+    kr_explanation: 직접 운전하지 않아도 목적지까지 알아서 척척 가는 자동차를 만들기 위해 노력 중인 기업
+- model: market.theme
+  pk: 16
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 가상현실(VR)
+    kr_explanation: 여긴 어디? 나는 누구? 컴퓨터가 현실과 비슷한 환경(가상현실, Virtual Reality)을 만들어 내도록 해주는 기업
+- model: market.theme
+  pk: 17
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 신나는 드라이빙
+    kr_explanation: 평소엔 대중교통도 좋지만, 가끔 드라이브로 기분전환도 필요. 자동차와 모터사이클 생산 기업
+- model: market.theme
+  pk: 18
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 뷰티의 세계
+    kr_explanation: 향수, 스킨케어, 네일 케어, 헤어 케어, 메이크업 등 다양한 뷰티 제품을 생산하거나 판매하는 기업
+- model: market.theme
+  pk: 19
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 게임 월드
+    kr_explanation: FIFA 온라인, 캔디크러쉬, 헤일로 등 우리가 즐기는 온라인, 모바일, 콘솔 게임을 제작, 퍼블리싱하고, 게임 스트리밍 서비스를 제공하는 기업
+- model: market.theme
+  pk: 20
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 스트리밍의 시대
+    kr_explanation: 영화, 음악, 게임 모두 다운로드와 대기의 시대는 끝, 이제는 실시간으로 재생하는 스트리밍의 시대
+- model: market.theme
+  pk: 21
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 갈증 해소
+    kr_explanation: 탄산음료, 주스, 맥주, 위스키, 와인 등 취향대로 즐기는 음료 및 주류를 생산하는 기업
+- model: market.theme
+  pk: 22
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 소셜미디어
+    kr_explanation: 친구 추가, 해시태그, 팔로우, 좋아요의 세계. 관심 있는 분야의 정보를 만들고 서로 공유하는 서비스
+- model: market.theme
+  pk: 23
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 이번 휴가는 어디?
+    kr_explanation: 내 휴가를 책임질 항공사, 호텔, 크루즈, 카지노는 물론 온라인 예약까지~
+- model: market.theme
+  pk: 24
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 통신
+    kr_explanation: 케이블 TV, 인터넷, 무선 통신망 등 장애나면 큰일 나는 필수 통신 서비스
+- model: market.theme
+  pk: 25
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 럭셔리
+    kr_explanation: 부담 없이 살 수는 없지만, 폼나는 프리미엄 브랜드
+- model: market.theme
+  pk: 26
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 자원/에너지
+    kr_explanation: 냉난방에서 공장 가동까지 경제가 돌아가는데 빠질 수 없는 에너지 생산 및 공급을 책임지는 기업
+- model: market.theme
+  pk: 27
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 컨텐츠 강자
+    kr_explanation: 우리가 즐겨보는 영화, 드라마, 애니메이션을 제작하는 기업
+- model: market.theme
+  pk: 28
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 월 스트리트
+    kr_explanation: 금융 하면 월 스트리트. 미국을 대표하는 금융기관
+- model: market.theme
+  pk: 29
+  fields:
+    created_at: 2022-12-19 00:00:00+09:00
+    updated_at: 2022-12-19 00:00:00+09:00
+    kr_name: 플랫폼 대표주자
+    kr_explanation: 직접 상품이나 서비스를 판매하지는 않지만, 소비자와 판매자가 모여서 거래를 할 수 있게 해주는 거간꾼
