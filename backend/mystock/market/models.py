@@ -55,3 +55,11 @@ class Stock(BaseModel):
                     f"{kr_name_field.help_text}과 {us_name_field.help_text} 중 한 가지는 필수 항목입니다."
                 )
             )
+
+
+class Theme(BaseModel):
+    kr_name = models.CharField(help_text="국문 테마명", max_length=64, unique=True)
+    kr_explanation = models.TextField(help_text="국문 테마 설명", default="", blank=True)
+
+    def __str__(self) -> str:
+        return self.kr_name
