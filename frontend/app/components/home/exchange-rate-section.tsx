@@ -2,11 +2,11 @@ import classNames from 'classnames';
 import { ContentWrapper } from '~/components/common';
 
 export default function ExchangeRateSection() {
-  const month = 8;
-  const dayOfMonth = 26;
-  const mockRate = 1331.3;
-  const mockDifference = -3.9;
-  const mockPercentage = -0.29;
+  const month = 12;
+  const dayOfMonth = 24;
+  const mockRate = 1276.1;
+  const mockDifference = 0;
+  const mockPercentage = 0;
 
   const absoluteDifference = Math.abs(mockDifference);
   const absolutePercentage = Math.abs(mockPercentage);
