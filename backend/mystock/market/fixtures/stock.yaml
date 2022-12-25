@@ -1084,3 +1084,615 @@
     us_name: Canadian National Railway Company
     krw_price: 153693
     krw_price_fluctuation_rate: 0.68
+- model: market.stock
+  pk: 101
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: MU
+    kr_name: 마이크론 테크놀로지
+    kr_name_initial_consonant: ㅁㅇㅋㄹ ㅌㅋㄴㄹㅈ
+    us_name: Micron Technology Inc
+    krw_price: 64060
+    krw_price_fluctuation_rate: 1.56
+- model: market.stock
+  pk: 102
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: SQ
+    kr_name: 블록(스퀘어)
+    kr_name_initial_consonant: ㅂㄹ(ㅅㅋㅇ)
+    us_name: Square Inc
+    krw_price: 77702
+    krw_price_fluctuation_rate: 0.50
+- model: market.stock
+  pk: 103
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: PYPL
+    kr_name: 페이팔 홀딩스
+    kr_name_initial_consonant: ㅍㅇㅍ ㅎㄷㅅ
+    us_name: PayPal Holdings Inc
+    krw_price: 88089
+    krw_price_fluctuation_rate: 0.67
+- model: market.stock
+  pk: 104
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: YUM
+    kr_name: 얌! 브랜드
+    kr_name_initial_consonant: ㅇ! ㅂㄹㄷ
+    us_name: Yum! Brands Inc
+    krw_price: 164489
+    krw_price_fluctuation_rate: 0.06
+- model: market.stock
+  pk: 105
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: DPZ
+    kr_name: 도미노 피자
+    kr_name_initial_consonant: ㄷㅁㄴ ㅍㅈ
+    us_name: Domino's Pizza Inc
+    krw_price: 450489
+    krw_price_fluctuation_rate: 0.23
+- model: market.stock
+  pk: 106
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: SHAK
+    kr_name: 쉐이크 쉑
+    kr_name_initial_consonant: ㅅㅇㅋ ㅅ
+    us_name: SHAKE SHACK
+    krw_price: 57284
+    krw_price_fluctuation_rate: -0.13
+- model: market.stock
+  pk: 107
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: GD
+    kr_name: 제너럴 다이내믹스
+    kr_name_initial_consonant: ㅈㄴㄹ ㄷㅇㄴㅁㅅ
+    us_name: General Dynamics Corporation
+    krw_price: 316345
+    krw_price_fluctuation_rate: 0.53
+- model: market.stock
+  pk: 108
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: DD
+    kr_name: 듀폰
+    kr_name_initial_consonant: ㄷㅍ
+    us_name: DuPont de Nemours Inc
+    krw_price: 87706
+    krw_price_fluctuation_rate: 1.75
+- model: market.stock
+  pk: 109
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: DOW
+    kr_name: 다우
+    kr_name_initial_consonant: ㄷㅇ
+    us_name: Dow Inc
+    krw_price: 64902
+    krw_price_fluctuation_rate: 1.37
+- model: market.stock
+  pk: 110
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: NEM
+    kr_name: 뉴몬트
+    kr_name_initial_consonant: ㄴㅁㅌ
+    us_name: Newmont Mining Corporation
+    krw_price: 61061
+    krw_price_fluctuation_rate: 0.74
+- model: market.stock
+  pk: 111
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: AMCR
+    kr_name: 앰코
+    kr_name_initial_consonant: ㅇㅋ
+    us_name: Amcor plc
+    krw_price: 15390
+    krw_price_fluctuation_rate: 0.67
+- model: market.stock
+  pk: 112
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: GLW
+    kr_name: 코닝
+    kr_name_initial_consonant: ㅋㄴ
+    us_name: Corning Incorporated
+    krw_price: 40516
+    krw_price_fluctuation_rate: 0.57
+- model: market.stock
+  pk: 113
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: SPOT
+    kr_name: 스포티파이 테크놀로지
+    kr_name_initial_consonant: ㅅㅍㅌㅍㅇ ㅌㅋㄴㄹㅈ
+    us_name: Spotify
+    krw_price: 99153
+    krw_price_fluctuation_rate: -0.33
+- model: market.stock
+  pk: 114
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: BBY
+    kr_name: 베스트 바이
+    kr_name_initial_consonant: ㅂㅅㅌ ㅂㅇ
+    us_name: Best Buy Co Inc
+    krw_price: 103811
+    krw_price_fluctuation_rate: 1.11
+- model: market.stock
+  pk: 115
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: DG
+    kr_name: 달러 제너럴
+    kr_name_initial_consonant: ㄷㄹ ㅈㄴㄹ
+    us_name: Dollar General Corporation
+    krw_price: 315899
+    krw_price_fluctuation_rate: 0.82
+- model: market.stock
+  pk: 116
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: TGT
+    kr_name: 타겟
+    kr_name_initial_consonant: ㅌㄱ
+    us_name: Target Corporation
+    krw_price: 182674
+    krw_price_fluctuation_rate: 1.27
+- model: market.stock
+  pk: 117
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: SPG
+    kr_name: 사이먼 프로퍼티 그룹
+    kr_name_initial_consonant: ㅅㅇㅁ ㅍㄹㅍㅌ ㄱㄹ
+    us_name: Simon Property Group Inc
+    krw_price: 150465
+    krw_price_fluctuation_rate: 1.33
+- model: market.stock
+  pk: 118
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: HST
+    kr_name: 호스트 호텔 앤 리조트
+    kr_name_initial_consonant: ㅎㅅㅌ ㅎㅌ ㅇ ㄹㅈㅌ
+    us_name: Host Hotels & Resorts Inc
+    krw_price: 20851
+    krw_price_fluctuation_rate: 1.81
+- model: market.stock
+  pk: 119
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: AVB
+    kr_name: 아발론베이 커뮤니티
+    kr_name_initial_consonant: ㅇㅂㄹㅂㅇ ㅋㅁㄴㅌ
+    us_name: AvalonBay Communities Inc
+    krw_price: 208043
+    krw_price_fluctuation_rate: 0.73
+- model: market.stock
+  pk: 120
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: EQR
+    kr_name: 에쿼티 레지덴셜
+    kr_name_initial_consonant: ㅇㅋㅌ ㄹㅈㄷㅅ
+    us_name: Equity Residential
+    krw_price: 75851
+    krw_price_fluctuation_rate: 0.71
+- model: market.stock
+  pk: 121
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: GPS
+    kr_name: 갭
+    kr_name_initial_consonant: ㄱ
+    us_name: Gap Inc
+    krw_price: 15390
+    krw_price_fluctuation_rate: 2.46
+- model: market.stock
+  pk: 122
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: PVH
+    us_name: PVH
+    krw_price: 89404
+    krw_price_fluctuation_rate: 1.38
+- model: market.stock
+  pk: 123
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: RL
+    kr_name: 랄프 로렌
+    kr_name_initial_consonant: ㄹㅍ ㄹㄹ
+    us_name: Ralph Lauren Corporation
+    krw_price: 133174
+    krw_price_fluctuation_rate: 0.58
+- model: market.stock
+  pk: 124
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: LEVI
+    kr_name: 리바이 스트라우스
+    kr_name_initial_consonant: ㄹㅂㅇ ㅅㅌㄹㅇㅅ
+    us_name: Levi Strauss & Co
+    krw_price: 19754
+    krw_price_fluctuation_rate: 0.33
+- model: market.stock
+  pk: 125
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: VFC
+    us_name: VF
+    krw_price: 33268
+    krw_price_fluctuation_rate: -0.54
+- model: market.stock
+  pk: 126
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: PTON
+    kr_name: 펠로톤 인터랙티브
+    kr_name_initial_consonant: ㅍㄹㅌ ㅇㅌㄹㅌㅂ
+    us_name: Peloton Interactive Inc
+    krw_price: 11345
+    krw_price_fluctuation_rate: -3.47
+- model: market.stock
+  pk: 127
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: DASH
+    kr_name: 도어대시
+    kr_name_initial_consonant: ㄷㅇㄷㅅ
+    us_name: DoorDash Inc
+    krw_price: 64686
+    krw_price_fluctuation_rate: -1.30
+- model: market.stock
+  pk: 128
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: UBER
+    kr_name: 우버 테크놀로지스
+    kr_name_initial_consonant: ㅇㅂ ㅌㅋㄴㄹㅈㅅ
+    us_name: Uber Technologies Inc
+    krw_price: 31443
+    krw_price_fluctuation_rate: 0.00
+- model: market.stock
+  pk: 129
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: RACE
+    kr_name: 페라리
+    kr_name_initial_consonant: ㅍㄹㄹ
+    us_name: Ferrari NV
+    krw_price: 269270
+    krw_price_fluctuation_rate: -0.73
+- model: market.stock
+  pk: 130
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: HOG
+    kr_name: 할리-데이비슨
+    kr_name_initial_consonant: ㅎㄹ-ㄷㅇㅂㅅ
+    us_name: Harley-Davidson
+    krw_price: 52856
+    krw_price_fluctuation_rate: 0.39
+- model: market.stock
+  pk: 131
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: GM
+    kr_name: 제너럴 모터스
+    kr_name_initial_consonant: ㅈㄴㄹ ㅁㅌㅅ
+    us_name: General Motors Company
+    krw_price: 43170
+    krw_price_fluctuation_rate: 0.89
+- model: market.stock
+  pk: 132
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: F
+    kr_name: 포드 모터
+    kr_name_initial_consonant: ㅍㄷ ㅁㅌ
+    us_name: Ford Motor Company
+    krw_price: 14496
+    krw_price_fluctuation_rate: 0.44
+- model: market.stock
+  pk: 133
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: ULTA
+    kr_name: 얼타 뷰티
+    kr_name_initial_consonant: ㅇㅌ ㅂㅌ
+    us_name: Ulta Beauty Inc
+    krw_price: 582412
+    krw_price_fluctuation_rate: -0.14
+- model: market.stock
+  pk: 134
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: COTY
+    kr_name: 코티
+    kr_name_initial_consonant: ㅋㅌ
+    us_name: Coty Inc
+    krw_price: 10617
+    krw_price_fluctuation_rate: 0.61
+- model: market.stock
+  pk: 135
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: EL
+    kr_name: 에스티 로더
+    kr_name_initial_consonant: ㅇㅅㅌ ㄹㄷ
+    us_name: Estée Lauder Companies
+    krw_price: 307566
+    krw_price_fluctuation_rate: -0.50
+- model: market.stock
+  pk: 136
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: EA
+    kr_name: 일렉트로닉 아츠
+    kr_name_initial_consonant: ㅇㄹㅌㄹㄴ ㅇㅊ
+    us_name: Electronic Arts
+    krw_price: 155059
+    krw_price_fluctuation_rate: 0.07
+- model: market.stock
+  pk: 137
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: TTWO
+    kr_name: 테이크-투 인터랙티브 소프트웨어
+    kr_name_initial_consonant: ㅌㅇㅋ-ㅌ ㅇㅌㄹㅌㅂ ㅅㅍㅌㅇㅇ
+    us_name: Take-Two Interactive Software Inc
+    krw_price: 127393
+    krw_price_fluctuation_rate: 0.56
+- model: market.stock
+  pk: 138
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: RBLX
+    kr_name: 로블록스
+    kr_name_initial_consonant: ㄹㅂㄹㅅ
+    us_name: Roblox Corporation
+    krw_price: 34136
+    krw_price_fluctuation_rate: 1.21
+- model: market.stock
+  pk: 139
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: MNST
+    kr_name: 몬스터 베버리지
+    kr_name_initial_consonant: ㅁㅅㅌ ㅂㅂㄹㅈ
+    us_name: Monster Beverage Corporation
+    krw_price: 129218
+    krw_price_fluctuation_rate: 0.45
+- model: market.stock
+  pk: 140
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: STZ
+    kr_name: 컨스텔레이션 브랜드
+    kr_name_initial_consonant: ㅋㅅㅌㄹㅇㅅ ㅂㄹㄷ
+    us_name: Constellation Brands Inc
+    krw_price: 296578
+    krw_price_fluctuation_rate: 0.61
+- model: market.stock
+  pk: 141
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: KDP
+    kr_name: 큐리그 닥터 페퍼
+    kr_name_initial_consonant: ㅋㄹㄱ ㄷㅌ ㅍㅍ
+    us_name: Keurig Dr Pepper Inc
+    krw_price: 46412
+    krw_price_fluctuation_rate: 0.22
+- model: market.stock
+  pk: 142
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: PINS
+    kr_name: 핀터레스트
+    kr_name_initial_consonant: ㅍㅌㄹㅅㅌ
+    us_name: Pinterest Inc
+    krw_price: 31303
+    krw_price_fluctuation_rate: -0.77
+- model: market.stock
+  pk: 143
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: SNAP
+    kr_name: 스냅
+    kr_name_initial_consonant: ㅅㄴ
+    us_name: Snap Inc
+    krw_price: 10949
+    krw_price_fluctuation_rate: -1.16
+- model: market.stock
+  pk: 144
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: LVS
+    kr_name: 라스베가스 샌즈
+    kr_name_initial_consonant: ㄹㅅㅂㄱㅅ ㅅㅈ
+    us_name: Las Vegas Sands Corp
+    krw_price: 59364
+    krw_price_fluctuation_rate: 0.00
+- model: market.stock
+  pk: 145
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: BKNG
+    kr_name: 부킹 홀딩스
+    kr_name_initial_consonant: ㅂㅋ ㅎㄷㅅ
+    us_name: Booking Holdings Inc
+    krw_price: 2515857
+    krw_price_fluctuation_rate: 1.99
+- model: market.stock
+  pk: 146
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: DAL
+    kr_name: 델타 에어 라인
+    kr_name_initial_consonant: ㄷㅌ ㅇㅇ ㄹㅇ
+    us_name: Delta Air Lines
+    krw_price: 42315
+    krw_price_fluctuation_rate: 0.73
+- model: market.stock
+  pk: 147
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: LUV
+    kr_name: 사우스웨스트 에어라인
+    kr_name_initial_consonant: ㅅㅇㅅㅇㅅㅌ ㅇㅇㄹㅇ
+    us_name: Southwest Airlines
+    krw_price: 46054
+    krw_price_fluctuation_rate: 1.77
+- model: market.stock
+  pk: 148
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: MAR
+    kr_name: 메리어트 인터내셔널
+    kr_name_initial_consonant: ㅁㄹㅇㅌ ㅇㅌㄴㅅㄴ
+    us_name: Marriott International Inc
+    krw_price: 189603
+    krw_price_fluctuation_rate: 0.92
+- model: market.stock
+  pk: 149
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: HLT
+    kr_name: 힐튼 월드와이드 홀딩스
+    kr_name_initial_consonant: ㅎㅌ ㅇㄷㅇㅇㄷ ㅎㄷㅅ
+    us_name: Hilton Worldwide Holdings Inc
+    krw_price: 161337
+    krw_price_fluctuation_rate: 0.39
+- model: market.stock
+  pk: 150
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: CCL
+    kr_name: 카니발
+    kr_name_initial_consonant: ㅋㄴㅂ
+    us_name: Carnival Corporation & plc
+    krw_price: 9966
+    krw_price_fluctuation_rate: -0.89
+- model: market.stock
+  pk: 151
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: CHTR
+    kr_name: 차터 커뮤니케이션스
+    kr_name_initial_consonant: ㅊㅌ ㅋㅁㄴㅋㅇㅅㅅ
+    us_name: Charter Communications
+    krw_price: 426115
+    krw_price_fluctuation_rate: 3.10
+- model: market.stock
+  pk: 152
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: ATO
+    kr_name: 애트모스 에너지
+    kr_name_initial_consonant: ㅇㅌㅁㅅ ㅇㄴㅈ
+    us_name: Atmos Energy Corporation
+    krw_price: 146879
+    krw_price_fluctuation_rate: 0.94
+- model: market.stock
+  pk: 153
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: DUK
+    kr_name: 듀크 에너지
+    kr_name_initial_consonant: ㄷㅋ ㅇㄴㅈ
+    us_name: Duke Energy Corporation
+    krw_price: 131426
+    krw_price_fluctuation_rate: 1.02
+- model: market.stock
+  pk: 154
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: WBD
+    kr_name: 워너 브로스 디스커버리
+    kr_name_initial_consonant: ㅇㄴ ㅂㄹㅅ ㄷㅅㅋㅂㄹ
+    us_name: Warner Bros Discovery
+    krw_price: 11702
+    krw_price_fluctuation_rate: -0.65
+- model: market.stock
+  pk: 155
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: MET
+    kr_name: 메트라이프
+    kr_name_initial_consonant: ㅁㅌㄹㅇㅍ
+    us_name: MetLife
+    krw_price: 92224
+    krw_price_fluctuation_rate: 0.65
+- model: market.stock
+  pk: 156
+  fields:
+    created_at: 2022-12-25 12:00:00+09:00
+    updated_at: 2022-12-25 12:00:00+09:00
+    code: BX
+    kr_name: 블랙스톤
+    kr_name_initial_consonant: ㅂㄹㅅㅌ
+    us_name: Blackstone Group Inc
+    krw_price: 95593
+    krw_price_fluctuation_rate: 0.77
