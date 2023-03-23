@@ -2,7 +2,7 @@
 
 ## Environment
 * Node.js 16
-* [Yarn](https://classic.yarnpkg.com/en/)
+* [pnpm](https://pnpm.io/)
 * [TypeScript](https://www.typescriptlang.org/)
 * [React](https://reactjs.org/)
 * [Remix](https://remix.run/)
